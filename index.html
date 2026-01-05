@@ -4,271 +4,64 @@
   <meta charset="UTF-8">
   <title>SEAD ELECTRIC | Global Lighting Supplier & OEM Manufacturer</title>
   <meta name="description" content="SEAD ELECTRIC is a Dubai-based global lighting supplier offering commercial, architectural and industrial LED lighting with OEM and private label solutions.">
-  <meta name="keywords" content="lighting supplier Dubai, OEM lighting manufacturer, LED lighting exporter, private label lighting, commercial lighting supplier">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
   <style>
-    :root {
-      --primary: #0a2540;
-      --secondary: #f5f7fa;
-      --accent: #f59e0b;
-      --text: #1f2937;
-      --white: #ffffff;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
-
-    body {
-      color: var(--text);
-      background-color: var(--white);
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* NAVBAR */
-    header {
-      background: var(--white);
-      border-bottom: 1px solid #e5e7eb;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .nav {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px;
-    }
-
-    .logo {
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--primary);
-    }
-
-    .nav ul {
-      list-style: none;
-      display: flex;
-      gap: 24px;
-    }
-
-    .nav ul li a {
-      font-weight: 500;
-    }
-
-    /* HERO */
-    .hero {
-      background: linear-gradient(rgba(10,37,64,0.85), rgba(10,37,64,0.85)),
-                  url('https://images.unsplash.com/photo-1581093458791-9f3c3900df4b') center/cover no-repeat;
-      color: var(--white);
-      padding: 100px 16px;
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-size: 42px;
-      margin-bottom: 16px;
-    }
-
-    .hero p {
-      max-width: 700px;
-      margin: auto;
-      margin-bottom: 32px;
-      font-size: 18px;
-    }
-
-    .hero-buttons a {
-      display: inline-block;
-      padding: 14px 28px;
-      margin: 8px;
-      border-radius: 4px;
-      font-weight: 600;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: var(--primary);
-    }
-
-    .btn-secondary {
-      border: 2px solid var(--white);
-      color: var(--white);
-    }
-
-    /* SECTION */
-    section {
-      padding: 80px 16px;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 48px;
-    }
-
-    .section-title h2 {
-      font-size: 32px;
-      color: var(--primary);
-    }
-
-    /* PRODUCTS */
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 24px;
-    }
-
-    .product-card {
-      background: var(--secondary);
-      padding: 32px;
-      border-radius: 6px;
-      text-align: center;
-      font-weight: 600;
-    }
-
-    /* OEM */
-    .oem {
-      background: var(--primary);
-      color: var(--white);
-      text-align: center;
-      padding: 80px 16px;
-    }
-
-    .oem h2 {
-      font-size: 32px;
-      margin-bottom: 16px;
-    }
-
-    .oem p {
-      max-width: 800px;
-      margin: auto;
-      margin-bottom: 32px;
-    }
-
-    /* DISTRIBUTOR CTA */
-    .cta {
-      background: var(--accent);
-      color: var(--primary);
-      text-align: center;
-      padding: 64px 16px;
-    }
-
-    .cta h2 {
-      font-size: 30px;
-      margin-bottom: 16px;
-    }
-
-    /* CONTACT */
-    .contact form {
-      max-width: 600px;
-      margin: auto;
-      display: grid;
-      gap: 16px;
-    }
-
-    .contact input,
-    .contact textarea {
-      padding: 12px;
-      border: 1px solid #d1d5db;
-      border-radius: 4px;
-      width: 100%;
-    }
-
-    .contact button {
-      background: var(--primary);
-      color: var(--white);
-      padding: 14px;
-      border: none;
-      cursor: pointer;
-      font-weight: 600;
-    }
-
-    /* FOOTER */
-    footer {
-      background: #020617;
-      color: #cbd5e1;
-      padding: 40px 16px;
-    }
-
-    .footer-content {
-      max-width: 1200px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 24px;
-    }
-
-    .footer-content h4 {
-      color: var(--white);
-      margin-bottom: 12px;
-    }
-
-    .social a {
-      margin-right: 12px;
-      font-size: 14px;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 32px;
-      }
-
-      .nav ul {
-        display: none;
-      }
-    }
+    :root { --primary: #0a2540; --secondary: #f5f7fa; --accent: #f59e0b; --text: #1f2937; --white: #ffffff; }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+    body { color: var(--text); background-color: var(--white); line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+    header { background: var(--white); border-bottom: 1px solid #e5e7eb; position: sticky; top: 0; z-index: 1000; }
+    .nav { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 16px; }
+    .logo { font-size: 22px; font-weight: 700; color: var(--primary); }
+    .nav ul { list-style: none; display: flex; gap: 24px; }
+    .nav ul li a:hover { color: var(--accent); }
+    .hero { background: linear-gradient(rgba(10,37,64,0.85), rgba(10,37,64,0.85)), url('https://images.unsplash.com/photo-1581093458791-9f3c3900df4b') center/cover no-repeat; color: var(--white); padding: 100px 16px; text-align: center; }
+    .hero h1 { font-size: 42px; margin-bottom: 16px; }
+    .hero p { max-width: 700px; margin: auto; margin-bottom: 32px; font-size: 18px; }
+    .btn-primary { background: var(--accent); color: var(--primary); padding: 14px 28px; border-radius: 4px; font-weight: 600; display: inline-block; }
+    .btn-secondary { border: 2px solid var(--white); color: var(--white); padding: 14px 28px; border-radius: 4px; font-weight: 600; display: inline-block; }
+    section { padding: 80px 16px; }
+    .container { max-width: 1200px; margin: auto; }
+    .section-title { text-align: center; margin-bottom: 48px; }
+    .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
+    .product-card { background: var(--secondary); padding: 32px; border-radius: 6px; text-align: center; font-weight: 600; }
+    .oem { background: var(--primary); color: var(--white); text-align: center; padding: 80px 16px; }
+    .cta { background: var(--accent); color: var(--primary); text-align: center; padding: 64px 16px; }
+    .contact form { max-width: 600px; margin: auto; display: grid; gap: 16px; }
+    .contact input, .contact textarea { padding: 12px; border: 1px solid #d1d5db; border-radius: 4px; width: 100%; }
+    .contact button { background: var(--primary); color: var(--white); padding: 14px; border: none; cursor: pointer; font-weight: 600; }
+    footer { background: #020617; color: #cbd5e1; padding: 40px 16px; }
+    .footer-content { max-width: 1200px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
+    @media (max-width: 768px) { .nav ul { display: none; } }
   </style>
 </head>
-
 <body>
-
 <header>
   <nav class="nav">
     <div class="logo">SEAD ELECTRIC</div>
     <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Products</a></li>
-      <li><a href="#">OEM</a></li>
-      <li><a href="#">Distributors</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="product.html">Products</a></li>
+      <li><a href="oem.html">OEM</a></li>
+      <li><a href="distributors.html">Distributors</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 </header>
 
 <section class="hero">
   <h1>Global Lighting Supplier & OEM Manufacturer</h1>
-  <p>Dubai-based lighting company supplying commercial, architectural and industrial LED lighting worldwide with OEM and private label solutions.</p>
+  <p>Dubai-based lighting company supplying commercial, architectural and industrial LED lighting worldwide with SEAD OEM solutions.</p>
   <div class="hero-buttons">
-    <a href="#" class="btn-primary">Download Catalog</a>
-    <a href="#" class="btn-secondary">Become a Distributor</a>
+    <a href="product.html" class="btn-primary">View Products</a>
+    <a href="distributors.html" class="btn-secondary">Become a Distributor</a>
   </div>
 </section>
 
 <section>
   <div class="container">
-    <div class="section-title">
-      <h2>Our Product Categories</h2>
-    </div>
+    <div class="section-title"><h2>Our Product Categories</h2></div>
     <div class="products">
       <div class="product-card">LED Downlights</div>
       <div class="product-card">Panel Lights</div>
@@ -282,25 +75,16 @@
 
 <section class="oem">
   <h2>OEM & Private Label Lighting Solutions</h2>
-  <p>Launch or expand your own lighting brand with SEAD ELECTRIC. We offer customization, branding, packaging, and export support backed by trusted China manufacturing and Dubai logistics.</p>
-  <a href="#" class="btn-primary">Start OEM Project</a>
+  <p>Launch your brand with SEAD ELECTRIC. We offer customization, branding, and export support backed by Dubai logistics.</p>
+  <a href="oem.html" class="btn-primary">Start OEM Project</a>
 </section>
 
-<section class="cta">
-  <h2>Looking for a Reliable Lighting Distribution Partner?</h2>
-  <p>Join our global distributor network and grow with competitive pricing and strong supply support.</p>
-  <a href="#" class="btn-primary">Apply as Distributor</a>
-</section>
-
-<section class="contact">
+<section id="contact" class="contact">
   <div class="container">
-    <div class="section-title">
-      <h2>Contact Us</h2>
-    </div>
+    <div class="section-title"><h2>Contact Us</h2></div>
     <form>
       <input type="text" placeholder="Company Name" required>
       <input type="email" placeholder="Email Address" required>
-      <input type="text" placeholder="Country">
       <textarea rows="4" placeholder="Your Requirement"></textarea>
       <button type="submit">Send Inquiry</button>
     </form>
@@ -309,27 +93,10 @@
 
 <footer>
   <div class="footer-content">
-    <div>
-      <h4>SEAD ELECTRIC</h4>
-      <p>Dubai Free Zone lighting supplier serving global markets with OEM and private label solutions.</p>
-    </div>
-    <div>
-      <h4>Quick Links</h4>
-      <p><a href="#">Products</a></p>
-      <p><a href="#">OEM</a></p>
-      <p><a href="#">Distributors</a></p>
-    </div>
-    <div>
-      <h4>Connect</h4>
-      <div class="social">
-        <a href="#">LinkedIn</a>
-        <a href="#">Instagram</a>
-        <a href="#">WhatsApp</a>
-      </div>
-    </div>
+    <div><h4>SEAD ELECTRIC</h4><p>Dubai Free Zone lighting supplier serving global markets.</p></div>
+    <div><h4>Quick Links</h4><p><a href="product.html">Products</a></p><p><a href="oem.html">OEM</a></p></div>
+    <div><h4>Connect</h4><p>LinkedIn | Instagram | WhatsApp</p></div>
   </div>
 </footer>
-
 </body>
 </html>
-
