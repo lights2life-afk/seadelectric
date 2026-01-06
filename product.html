@@ -2,40 +2,164 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Products | SEAD ELECTRIC Lighting</title>
+  <title>Products | SEAD ELECTRIC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: Inter, sans-serif; margin:0; color:#1f2937; }
-    header { background:#fff; border-bottom:1px solid #eee; padding:16px; text-align:center; }
-    .nav-links { margin-top:10px; }
-    .nav-links a { margin:0 10px; text-decoration:none; color:#0a2540; font-weight:600; }
-    .container { max-width:1200px; margin:auto; padding:40px 16px; }
-    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:24px; }
-    .card { border:1px solid #e5e7eb; padding:24px; border-radius:6px; }
-    footer { background:#0a2540; color:#fff; padding:20px; text-align:center; margin-top:40px; }
+    :root { 
+      --primary: #0a2540; 
+      --accent: #f59e0b; 
+      --text-main: #1f2937;
+      --text-muted: #6b7280;
+      --bg-light: #f9fafb; 
+      --border: #e5e7eb; 
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+    body { background-color: white; color: var(--text-main); line-height: 1.5; }
+    a { text-decoration: none; color: inherit; }
+
+    /* --- HEADER --- */
+    header { border-bottom: 1px solid var(--border); padding: 16px; background: white; position: sticky; top: 0; z-index: 100; }
+    .nav-container { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-weight: 700; font-size: 22px; color: var(--primary); }
+    .nav-links a { margin-left: 24px; font-weight: 500; color: var(--text-main); font-size: 15px; }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* --- PAGE TITLE --- */
+    .page-header { background: var(--bg-light); padding: 60px 16px; text-align: center; border-bottom: 1px solid var(--border); }
+    .page-header h1 { font-size: 36px; color: var(--primary); margin-bottom: 8px; }
+    .page-header p { color: var(--text-muted); max-width: 600px; margin: auto; font-size: 18px; }
+
+    /* --- PRODUCT GRID --- */
+    .container { max-width: 1200px; margin: 40px auto; padding: 0 16px; }
+    
+    .product-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+      gap: 32px; 
+    }
+
+    .product-card { 
+      border: 1px solid var(--border); 
+      border-radius: 4px; 
+      overflow: hidden; 
+      transition: all 0.3s ease; 
+      background: #fff;
+    }
+
+    .product-card:hover { 
+      transform: translateY(-8px); 
+      box-shadow: 0 12px 24px rgba(0,0,0,0.08); 
+      border-color: var(--accent);
+    }
+
+    .image-box { 
+      width: 100%; 
+      height: 300px; 
+      background: #f3f4f6; /* Placeholder color while loading */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .image-box img { 
+      width: 100%; 
+      height: 100%; 
+      object-fit: cover; 
+    }
+
+    .content-box { padding: 20px; border-top: 1px solid var(--border); }
+    .category-label { font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+    .product-name { font-size: 20px; font-weight: 600; color: var(--primary); margin-bottom: 8px; }
+    .product-desc { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+    /* --- FOOTER --- */
+    footer { border-top: 1px solid var(--border); padding: 40px 16px; text-align: center; margin-top: 60px; color: var(--text-muted); font-size: 14px; }
+
+    @media (max-width: 640px) {
+      .product-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; } /* Hide menu on mobile for simplicity */
+    }
   </style>
 </head>
 <body>
+
 <header>
-  <div style="font-size:22px; font-weight:700; color:#0a2540;">SEAD ELECTRIC</div>
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="product.html">Products</a>
-    <a href="oem.html">OEM</a>
-    <a href="distributors.html">Distributors</a>
+  <div class="nav-container">
+    <a href="index.html" class="logo">SEAD ELECTRIC</a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="product.html">Products</a>
+      <a href="oem.html">OEM</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </div>
 </header>
 
+<div class="page-header">
+  <h1>Product Collection</h1>
+  <p>High-performance lighting solutions for commercial and architectural projects.</p>
+</div>
+
 <div class="container">
-  <h1>Our Lighting Solutions</h1>
-  <div class="grid">
-    <div class="card"><h3>LED Downlights</h3><p>Commercial & Retail solutions.</p></div>
-    <div class="card"><h3>LED Panel Lights</h3><p>Slim panels for offices.</p></div>
-    <div class="card"><h3>High Bay</h3><p>Industrial warehouse lighting.</p></div>
-    <div class="card"><h3>Custom</h3><p>Tailored project requirements.</p></div>
+  <div class="product-grid">
+    
+    <!-- PRODUCT ITEM 1 -->
+    <div class="product-card">
+      <div class="image-box">
+        <img src="images/downlight.jpg" alt="Recessed Downlight">
+      </div>
+      <div class="content-box">
+        <div class="category-label">Downlights</div>
+        <div class="product-name">SEAD Pro-D1 Series</div>
+        <p class="product-desc">Advanced recessed downlight with anti-glare technology and multiple CCT options.</p>
+      </div>
+    </div>
+
+    <!-- PRODUCT ITEM 2 -->
+    <div class="product-card">
+      <div class="image-box">
+        <img src="images/panel.jpg" alt="LED Panel">
+      </div>
+      <div class="content-box">
+        <div class="category-label">Panels</div>
+        <div class="product-name">Ultra-Slim Office Panel</div>
+        <p class="product-desc">Uniform light distribution for modern office environments and workspaces.</p>
+      </div>
+    </div>
+
+    <!-- PRODUCT ITEM 3 -->
+    <div class="product-card">
+      <div class="image-box">
+        <img src="images/highbay.jpg" alt="High Bay">
+      </div>
+      <div class="content-box">
+        <div class="category-label">Industrial</div>
+        <div class="product-name">Titan High Bay 150W</div>
+        <p class="product-desc">Heavy-duty industrial lighting designed for warehouses and high-ceiling facilities.</p>
+      </div>
+    </div>
+
+    <!-- PRODUCT ITEM 4 -->
+    <div class="product-card">
+      <div class="image-box">
+        <img src="images/linear.jpg" alt="Linear Lighting">
+      </div>
+      <div class="content-box">
+        <div class="category-label">Architectural</div>
+        <div class="product-name">Linear Profile L20</div>
+        <p class="product-desc">Sleek architectural linear lighting for aesthetic interior designs.</p>
+      </div>
+    </div>
+
   </div>
 </div>
 
-<footer><p>© SEAD ELECTRIC | Global Lighting Supplier</p></footer>
+<footer>
+  &copy; 2026 SEAD ELECTRIC. All rights reserved.
+</footer>
+
 </body>
 </html>
