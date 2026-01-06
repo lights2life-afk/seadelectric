@@ -5,31 +5,28 @@
   <title>Become a Distributor | SEAD ELECTRIC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body { font-family: Inter, sans-serif; margin:0; }
-    header { background:#fff; border-bottom:1px solid #eee; padding:16px; text-align:center; }
-    .nav-links a { margin:0 10px; text-decoration:none; color:#0a2540; font-weight:600; }
-    .hero { background:#f59e0b; padding:60px 16px; text-align:center; }
-    .container { max-width:800px; margin:auto; padding:40px 16px; }
-    input, textarea { width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; }
-    button { background:#0a2540; color:#fff; border:none; padding:15px 30px; font-weight:bold; cursor:pointer; }
+    header { background: #ffffff; border-bottom: 1px solid #e5e7eb; position: sticky; top: 0; z-index: 1000; }
+.nav { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
+.logo img { height: 60px; width: auto; display: block; }
+.nav ul { list-style: none; display: flex; gap: 30px; }
+.nav ul li a { font-weight: 600; font-size: 16px; color: #0a2540; transition: 0.3s; }
+.nav ul li a:hover { color: #f59e0b; }
+@media (max-width: 768px) { .nav { flex-direction: column; gap: 15px; } .nav ul { gap: 15px; } }
   </style>
 </head>
 <body>
+
 <header>
   <nav class="nav">
-    <!-- LOGO ADDED HERE -->
     <div class="logo">
-      <a href="index.html">
-        <img src="images/SEADELECTRIC.png" alt="SEAD ELECTRIC Logo" style="height: 80px;">
-      </a>
+      <a href="index.html"><img src="SEEADELECTRIC.png" alt="SEAD ELECTRIC"></a>
     </div>
-    
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="product.html">Products</a></li>
       <li><a href="oem.html">OEM</a></li>
       <li><a href="distributors.html">Distributors</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 </header>
