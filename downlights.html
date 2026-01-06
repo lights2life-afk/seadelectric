@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Recessed Downlights | SEAD ELECTRIC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --primary: #0a2540; --accent: #f59e0b; --border: #e5e7eb; --text: #1f2937; }
+    body { font-family: 'Inter', sans-serif; margin: 0; color: var(--text); }
+    a { text-decoration: none; color: inherit; }
+
+    /* Nav stays consistent */
+    header { border-bottom: 1px solid var(--border); padding: 16px; background: white; }
+    .nav-container { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-weight: 700; font-size: 22px; color: var(--primary); }
+
+    /* Category Header */
+    .category-banner { background: #f9fafb; padding: 60px 16px; text-align: center; border-bottom: 1px solid var(--border); }
+    .breadcrumb { font-size: 14px; color: #6b7280; margin-bottom: 10px; }
+
+    /* Product Grid */
+    .container { max-width: 1200px; margin: 40px auto; padding: 0 16px; }
+    .item-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 24px; }
+    
+    .item-card { border: 1px solid var(--border); padding: 15px; border-radius: 4px; text-align: center; transition: 0.3s; }
+    .item-card:hover { border-color: var(--accent); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+    .item-img { width: 100%; height: 200px; background: #eee; object-fit: contain; margin-bottom: 15px; }
+    .item-name { font-weight: 600; font-size: 16px; color: var(--primary); margin-bottom: 5px; }
+    .item-specs { font-size: 13px; color: #6b7280; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="nav-container">
+    <a href="index.html" class="logo">SEAD ELECTRIC</a>
+    <nav><a href="product.html">← Back to All Categories</a></nav>
+  </div>
+</header>
+
+<div class="category-banner">
+  <div class="breadcrumb">Products / Interior Lighting</div>
+  <h1>Recessed Downlights</h1>
+  <p>Discover our range of professional architectural downlights.</p>
+</div>
+
+<div class="container">
+  <div class="item-grid">
+    
+    <!-- ITEM 1 -->
+    <div class="item-card">
+      <img src="images/d1-model.jpg" alt="D1" class="item-img">
+      <div class="item-name">SEAD D1 - 7W</div>
+      <div class="item-specs">CRI 90 | 3000K-6000K | IP44</div>
+    </div>
+
+    <!-- ITEM 2 -->
+    <div class="item-card">
+      <img src="images/d2-model.jpg" alt="D2" class="item-img">
+      <div class="item-name">SEAD D2 - 12W</div>
+      <div class="item-specs">CRI 90 | Anti-Glare | Dimming</div>
+    </div>
+
+    <!-- REPEAT THIS BLOCK FOR ALL 10-20 PRODUCTS -->
+    <!-- ITEM 3... -->
+    <!-- ITEM 4... -->
+
+  </div>
+</div>
+
+<footer style="text-align:center; padding:40px; color:#999; border-top:1px solid #eee;">
+  &copy; 2026 SEAD ELECTRIC
+</footer>
+
+</body>
+</html>
