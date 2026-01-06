@@ -30,14 +30,22 @@
   <p>Grow your business with a global lighting leader.</p>
 </section>
 
-<div class="container">
-  <h2>Apply Now</h2>
-  <form action="#" method="POST">
-    <input type="text" placeholder="Company Name" required>
-    <input type="email" placeholder="Email" required>
-    <textarea rows="5" placeholder="Tell us about your market"></textarea>
-    <button type="submit">Send Application</button>
-  </form>
-</div>
+<section id="contact" class="contact">
+  <div class="container contact-container">
+    <div class="section-title">
+        <h2>Contact Us</h2>
+        <p>Send an inquiry to sales@seadelectric.com</p>
+    </div>
+    
+    <!-- CONTACT FORM (Integration with Formspree) -->
+    <form action="https://formspree.io/f/xlgdykyr" method="POST">
+      <input type="text" name="company" placeholder="Company Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="text" name="subject" placeholder="Subject / Product of Interest">
+      <textarea name="message" rows="5" placeholder="Detailed Requirement" required></textarea>
+      <button type="submit">Send Inquiry</button>
+    </form>
+  </div>
+</section>
 </body>
 </html>
