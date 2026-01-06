@@ -7,36 +7,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root { --primary: #0a2540; --secondary: #f5f7fa; --accent: #f59e0b; --text: #1f2937; --white: #ffffff; }
+    :root { --primary: #0a2540; --secondary: #f5f7fa; --accent: #f59e0b; --text: #1f2937; --white: #ffffff; --muted: #6b7280; }
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
     body { color: var(--text); background-color: var(--white); line-height: 1.6; }
-    a { text-decoration: none; color: inherit; }
+    a { text-decoration: none; color: inherit; transition: 0.3s; }
+    
+    /* NAVIGATION */
     header { background: var(--white); border-bottom: 1px solid #e5e7eb; position: sticky; top: 0; z-index: 1000; }
     .nav { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 16px; }
     .logo { font-size: 22px; font-weight: 700; color: var(--primary); }
     .nav ul { list-style: none; display: flex; gap: 24px; }
     .nav ul li a:hover { color: var(--accent); }
+
+    /* HERO */
     .hero { background: linear-gradient(rgba(10,37,64,0.85), rgba(10,37,64,0.85)), url('https://images.unsplash.com/photo-1581093458791-9f3c3900df4b') center/cover no-repeat; color: var(--white); padding: 100px 16px; text-align: center; }
     .hero h1 { font-size: 42px; margin-bottom: 16px; }
     .hero p { max-width: 700px; margin: auto; margin-bottom: 32px; font-size: 18px; }
     .btn-primary { background: var(--accent); color: var(--primary); padding: 14px 28px; border-radius: 4px; font-weight: 600; display: inline-block; }
     .btn-secondary { border: 2px solid var(--white); color: var(--white); padding: 14px 28px; border-radius: 4px; font-weight: 600; display: inline-block; }
+
+    /* CATEGORIES SECTION */
     section { padding: 80px 16px; }
     .container { max-width: 1200px; margin: auto; }
     .section-title { text-align: center; margin-bottom: 48px; }
-    .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
-    .product-card { background: var(--secondary); padding: 32px; border-radius: 6px; text-align: center; font-weight: 600; }
+    .section-title h2 { font-size: 32px; color: var(--primary); }
+    
+    .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+    .product-card { background: var(--secondary); padding: 35px; border-radius: 8px; border: 1px solid #e5e7eb; transition: 0.3s; }
+    .product-card:hover { transform: translateY(-5px); border-color: var(--accent); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+    .product-card h3 { color: var(--primary); margin-bottom: 12px; font-size: 20px; }
+    .product-card p { font-size: 14px; color: var(--muted); margin-bottom: 20px; }
+    .view-link { font-weight: 700; color: var(--accent); font-size: 14px; text-transform: uppercase; }
+
+    /* OEM SECTION */
     .oem { background: var(--primary); color: var(--white); text-align: center; padding: 80px 16px; }
-    .cta { background: var(--accent); color: var(--primary); text-align: center; padding: 64px 16px; }
-    .contact form { max-width: 600px; margin: auto; display: grid; gap: 16px; }
-    .contact input, .contact textarea { padding: 12px; border: 1px solid #d1d5db; border-radius: 4px; width: 100%; }
-    .contact button { background: var(--primary); color: var(--white); padding: 14px; border: none; cursor: pointer; font-weight: 600; }
-    footer { background: #020617; color: #cbd5e1; padding: 40px 16px; }
-    .footer-content { max-width: 1200px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
-    @media (max-width: 768px) { .nav ul { display: none; } }
+    .oem h2 { font-size: 32px; margin-bottom: 16px; }
+    .oem p { max-width: 800px; margin: auto; margin-bottom: 32px; }
+
+    /* CONTACT SECTION */
+    .contact { background: var(--white); }
+    .contact-container { max-width: 700px; margin: auto; }
+    .contact form { display: grid; gap: 16px; }
+    .contact input, .contact textarea { padding: 14px; border: 1px solid #d1d5db; border-radius: 4px; width: 100%; font-size: 16px; }
+    .contact button { background: var(--primary); color: var(--white); padding: 16px; border: none; cursor: pointer; font-weight: 700; border-radius: 4px; font-size: 16px; }
+    .contact button:hover { background: #1a3a5a; }
+
+    /* FOOTER */
+    footer { background: #020617; color: #cbd5e1; padding: 60px 16px; }
+    .footer-content { max-width: 1200px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
+    .footer-content h4 { color: var(--white); margin-bottom: 20px; }
+    .footer-links p { margin-bottom: 10px; font-size: 14px; }
+
+    @media (max-width: 768px) { .nav ul { display: none; } .hero h1 { font-size: 32px; } }
   </style>
 </head>
 <body>
+
 <header>
   <nav class="nav">
     <div class="logo">SEAD ELECTRIC</div>
@@ -62,30 +88,75 @@
 <section>
   <div class="container">
     <div class="section-title"><h2>Our Product Categories</h2></div>
-    <div class="products">
-      <div class="product-card">LED Downlights</div>
-      <div class="product-card">Panel Lights</div>
-      <div class="product-card">Linear Lighting</div>
-      <div class="product-card">High Bay & Industrial</div>
-      <div class="product-card">Outdoor & Facade</div>
-      <div class="product-card">Custom Lighting</div>
+    <div class="products-grid">
+      
+      <!-- 1. LED Downlights -->
+      <a href="downlights.html" class="product-card">
+        <h3>LED Downlights</h3>
+        <p>Precision-engineered for modern interiors, our LED downlights offer superior anti-glare performance and high CRI for accurate color rendering. Ideal for commercial and hospitality spaces, these luminaires provide seamless integration, energy efficiency, and a refined aesthetic.</p>
+        <span class="view-link">View Collection →</span>
+      </a>
+
+      <!-- 2. Panel Lights -->
+      <a href="panels.html" class="product-card">
+        <h3>Panel Lights</h3>
+        <p>High-efficiency LED panels designed for uniform, flicker-free illumination in office and commercial spaces. Our ultra-slim panels deliver soft, eye-comfortable light while significantly reducing energy consumption. Durable construction ensures long-term reliability for any workspace.</p>
+        <span class="view-link">View Collection →</span>
+      </a>
+
+      <!-- 3. Linear Lighting -->
+      <a href="linear.html" class="product-card">
+        <h3>Linear Lighting</h3>
+        <p>Sophisticated architectural linear systems that blend performance with design flexibility. Perfect for creating continuous lines of light or geometric patterns, our linear profiles offer customizable lengths. Engineered for modern aesthetics in lobbies, galleries, and creative offices.</p>
+        <span class="view-link">View Collection →</span>
+      </a>
+
+      <!-- 4. High Bay & Industrial -->
+      <a href="industrial.html" class="product-card">
+        <h3>High Bay & Industrial</h3>
+        <p>Industrial lighting solutions engineered for demanding environments. Delivering high-efficiency luminaires that enhance safety, productivity, and visibility in factories and warehouses. Durable LED systems with robust construction to reduce downtime and maintenance costs in harsh conditions.</p>
+        <span class="view-link">View Collection →</span>
+      </a>
+
+      <!-- 5. Outdoor & Facade -->
+      <a href="outdoor.html" class="product-card">
+        <h3>Outdoor & Facade</h3>
+        <p>Weather-resistant outdoor luminaires designed to highlight architectural features and ensure urban safety. From facade floodlights to landscape lighting, our products feature high IP ratings and durable coatings to withstand diverse environmental challenges while providing powerful illumination.</p>
+        <span class="view-link">View Collection →</span>
+      </a>
+
+      <!-- 6. Custom Lighting -->
+      <a href="custom.html" class="product-card">
+        <h3>Custom Lighting</h3>
+        <p>Tailored lighting solutions designed to meet unique project specifications. We collaborate with architects to manufacture bespoke luminaires that fulfill specific aesthetic or technical requirements, including specialized finishes and advanced control integration for one-of-a-kind projects.</p>
+        <span class="view-link">View Collection →</span>
+      </a>
+
     </div>
   </div>
 </section>
 
 <section class="oem">
-  <h2>OEM & Private Label Lighting Solutions</h2>
-  <p>Launch your brand with SEAD ELECTRIC. We offer customization, branding, and export support backed by Dubai logistics.</p>
-  <a href="oem.html" class="btn-primary">Start OEM Project</a>
+  <div class="container">
+    <h2>OEM & Private Label Lighting Solutions</h2>
+    <p>Launch your brand with SEAD ELECTRIC. We offer customization, branding, and export support backed by trusted Dubai logistics and manufacturing excellence.</p>
+    <a href="oem.html" class="btn-primary">Start OEM Project</a>
+  </div>
 </section>
 
 <section id="contact" class="contact">
-  <div class="container">
-    <div class="section-title"><h2>Contact Us</h2></div>
-    <form>
-      <input type="text" placeholder="Company Name" required>
-      <input type="email" placeholder="Email Address" required>
-      <textarea rows="4" placeholder="Your Requirement"></textarea>
+  <div class="container contact-container">
+    <div class="section-title">
+        <h2>Contact Us</h2>
+        <p>Send an inquiry to sales@seadelectric.com</p>
+    </div>
+    
+    <!-- CONTACT FORM (Integration with Formspree) -->
+    <form action="https://formspree.io/f/xlgdykyr" method="POST">
+      <input type="text" name="company" placeholder="Company Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="text" name="subject" placeholder="Subject / Product of Interest">
+      <textarea name="message" rows="5" placeholder="Detailed Requirement" required></textarea>
       <button type="submit">Send Inquiry</button>
     </form>
   </div>
@@ -93,10 +164,29 @@
 
 <footer>
   <div class="footer-content">
-    <div><h4>SEAD ELECTRIC</h4><p>Dubai Free Zone lighting supplier serving global markets.</p></div>
-    <div><h4>Quick Links</h4><p><a href="product.html">Products</a></p><p><a href="oem.html">OEM</a></p></div>
-    <div><h4>Connect</h4><p>LinkedIn | Instagram | WhatsApp</p></div>
+    <div>
+      <h4>SEAD ELECTRIC</h4>
+      <p>Dubai Free Zone lighting supplier serving global markets with OEM and private label solutions.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <p><a href="product.html">Products</a></p>
+      <p><a href="oem.html">OEM Solutions</a></p>
+      <p><a href="distributors.html">Distributor Program</a></p>
+    </div>
+    <div>
+      <h4>Contact Info</h4>
+      <p>Email: sales@seadelectric.com</p>
+      <p>Dubai, United Arab Emirates</p>
+      <div style="margin-top:15px;">
+        <span style="margin-right:10px;">LinkedIn</span>
+        <span style="margin-right:10px;">Instagram</span>
+        <span>WhatsApp</span>
+      </div>
+    </div>
   </div>
+  <p style="text-align:center; margin-top:50px; font-size:12px; opacity:0.6;">&copy; 2026 SEAD ELECTRIC. All rights reserved.</p>
 </footer>
+
 </body>
 </html>
