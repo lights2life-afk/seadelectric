@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us | SEAD ELECTRIC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --primary: #0a2540; --accent: #f59e0b; --text: #1f2937; --bg: #f9fafb; }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+    body { background-color: #fff; color: var(--text); line-height: 1.6; }
+    a { text-decoration: none; }
+
+    /* HEADER */
+    header { background: #ffffff; border-bottom: 1px solid #e5e7eb; position: sticky; top: 0; z-index: 1000; }
+    .nav { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
+    .logo img { height: 60px; width: auto; display: block; }
+    .nav ul { list-style: none; display: flex; gap: 30px; }
+    .nav ul li a { font-weight: 600; font-size: 16px; color: var(--primary); transition: 0.3s; }
+    .nav ul li a:hover { color: var(--accent); }
+
+    /* CONTENT */
+    .contact-hero { background: var(--bg); padding: 60px 20px; text-align: center; }
+    .contact-hero h1 { font-size: 36px; color: var(--primary); margin-bottom: 10px; }
+    
+    .container { max-width: 800px; margin: 50px auto; padding: 0 20px; }
+    .contact-card { background: white; border: 1px solid #e5e7eb; padding: 40px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+
+    /* FORM STYLING */
+    form { display: grid; gap: 20px; }
+    input, textarea { width: 100%; padding: 14px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 16px; outline: none; transition: 0.3s; }
+    input:focus, textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1); }
+    button { background: var(--primary); color: white; padding: 16px; border: none; border-radius: 4px; font-weight: 700; font-size: 16px; cursor: pointer; transition: 0.3s; }
+    button:hover { background: #1a3a5a; transform: translateY(-2px); }
+
+    footer { background: #020617; color: #cbd5e1; padding: 40px 20px; text-align: center; margin-top: 60px; }
+    @media (max-width: 768px) { .nav { flex-direction: column; gap: 15px; } .nav ul { gap: 15px; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <div class="logo">
+      <a href="index.html"><img src="SEADELECTRIC.png" alt="SEAD ELECTRIC"></a>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="product.html">Products</a></li>
+      <li><a href="oem.html">OEM</a></li>
+      <li><a href="distributors.html">Distributors</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="contact-hero">
+  <h1>Contact Us</h1>
+  <p>Our team is ready to assist with your lighting projects and OEM inquiries.</p>
+</section>
+
+<div class="container">
+  <div class="contact-card">
+    <!-- CONTACT FORM (Integration with Formspree) -->
+    <form action="https://formspree.io/f/xlgdykyr" method="POST">
+      <input type="text" name="company" placeholder="Company Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="text" name="subject" placeholder="Subject / Product of Interest">
+      <textarea name="message" rows="5" placeholder="Detailed Requirement" required></textarea>
+      <button type="submit">Send Inquiry</button>
+    </form>
+  </div>
+  
+  <div style="margin-top: 40px; text-align: center; color: #6b7280;">
+      <p>Direct Email: <strong>sales@seadelectric.com</strong></p>
+      <p>Location: Dubai, United Arab Emirates</p>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2026 SEAD ELECTRIC. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
