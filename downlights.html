@@ -11,9 +11,46 @@
     a { text-decoration: none; color: inherit; }
 
     /* Nav stays consistent */
-    header { background: #ffffff; border-bottom: 1px solid #e5e7eb; position: sticky; top: 0; z-index: 1000; }
-    .nav-container { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; }
-    .logo img { height: 60px; width: auto; display: block; }
+    header { 
+    background: #ffffff; 
+    border-bottom: 1px solid #e5e7eb; 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+}
+
+.nav { 
+    max-width: 1200px; 
+    margin: auto; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 15px 20px; }
+
+.logo img { 
+    height: 60px; 
+    width: auto; 
+    display: block; }
+
+.nav ul { 
+    list-style: none; 
+    display: flex; 
+    gap: 30px; }
+
+.nav ul li a { 
+    font-weight: 600; 
+    font-size: 16px; 
+    color: #0a2540; 
+    text-decoration: none;
+    transition: 0.3s; }
+
+.nav ul li a:hover { 
+    color: #f59e0b; }
+
+/* Fix for mobile */
+@media (max-width: 768px) {
+    .nav { flex-direction: column; gap: 15px; }
+    .nav ul { gap: 15px; }}
 
     /* Category Header */
     .category-banner { background: #f9fafb; padding: 60px 16px; text-align: center; border-bottom: 1px solid var(--border); }
@@ -33,9 +70,10 @@
 <body>
 
 <header>
-  <div class="nav-container">
-    <a href="index.html">
-        <img src="images/SEADELECTRIC.png" alt="SEAD ELECTRIC"></a>
+  <header>
+  <nav class="nav"> 
+    <div class="logo">
+      <a href="index.html"><img src="SELOGO.png" alt="SEAD ELECTRIC"></a>
     </div>
     <ul>
     <nav><a href="index.html">← Back to All Categories</a></nav>
