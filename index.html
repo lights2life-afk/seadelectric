@@ -39,32 +39,35 @@
     .product-card p { font-size: 14px; color: var(--muted); margin-bottom: 20px; }
     .view-link { font-weight: 700; color: var(--accent); font-size: 14px; text-transform: uppercase; }
 
-    /* --- ROLLER SECTION STYLES --- */
-    .featured-roller { background: #f9f9f9; padding: 60px 0; border-top: 1px solid #eee; }
+    /* --- AUTO ROLLING FEATURED PRODUCTS --- */
+    .featured-roller { background: #f9f9f9; padding: 80px 0; border-top: 1px solid #eee; overflow: hidden; position: relative; }
+    
     .roller-wrapper { 
       display: flex; 
-      overflow-x: auto; 
-      gap: 20px; 
-      padding: 20px; 
-      scrollbar-width: none; /* Firefox */
-      scroll-snap-type: x mandatory;
+      width: calc(300px * 12 + 20px * 12); /* Width of all items combined */
+      animation: roll 30s linear infinite; 
     }
-    .roller-wrapper::-webkit-scrollbar { display: none; } /* Chrome/Safari */
-    
+
+    /* The movement animation */
+    @keyframes roll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(calc(-300px * 6 - 20px * 6)); } /* Moves half the items */
+    }
+
     .roller-item { 
-      flex: 0 0 300px; 
+      flex: 0 0 auto; 
       height: 300px; 
       background: #fff; 
       border: 1px solid #e5e7eb; 
       display: flex; 
       align-items: center; 
       justify-content: center; 
-      padding: 30px; 
-      scroll-snap-align: start;
+      padding: 10px; 
+      margin-right: 20px;
       transition: 0.3s;
     }
-    .roller-item:hover { border-color: var(--accent); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
     .roller-item img { max-width: 100%; max-height: 100%; object-fit: contain; }
+    .featured-roller:hover .roller-wrapper { animation-play-state: paused; } /* Pauses on hover */
 
     /* CONTACT SECTION */
     .contact { background: var(--white); }
@@ -164,18 +167,37 @@
   </div>
 </section>
 
-<!-- NEW ROLLING SECTION -->
+<!-- AUTOMATIC ROLLING SECTION -->
 <section class="featured-roller">
   <div class="container">
-    <div class="section-title"><h2>Featured Products</h2></div>
-    <div class="roller-wrapper">
-      <div class="roller-item"><img src="images/darklightseries.png" alt="Dark Light"></div>
-      <div class="roller-item"><img src="images/discseries.png" alt="Disc Series"></div>
-      <div class="roller-item"><img src="images/eggseries.png" alt="Egg Series"></div>
-      <div class="roller-item"><img src="images/pinsnoot.png" alt="Pin Snoot"></div>
-      <div class="roller-item"><img src="images/snoot02.png" alt="Snoot 02"></div>
-      <div class="roller-item"><img src="images/highbay.png" alt="High Bay"></div>
-    </div>
+    <div class="section-title"><h2>Featured Collection</h2></div>
+  </div>
+  <div class="roller-wrapper">
+    <!-- List items twice to create seamless loop -->
+    <div class="roller-item"><img src="images/darklightseries.png" alt="Dark Light"></div>
+    <div class="roller-item"><img src="images/discseries.png" alt="Disc Series"></div>
+    <div class="roller-item"><img src="images/eggseries.png" alt="Egg Series"></div>
+    <div class="roller-item"><img src="images/snoot02.png" alt="Snoot 02"></div>
+    <div class="roller-item"><img src="images/TUBEPRO.png" alt="Tube Projector">
+    <div class="roller-item"><img src="images/CUBEPRO.png" alt="Cube Projector">
+    <div class="roller-item"><img src="deco/DEC02.jpg" alt="DEC02" class="item-img">
+    <div class="roller-item"><img src="deco/DEC04.jpg" alt="DEC04" class="item-img">
+    <div class="roller-item"><img src="deco/DEC07.jpg" alt="DEC07" class="item-img">
+    <div class="roller-item"><img src="deco/DEC09.jpg" alt="DEC09" class="item-img">
+    <div class="roller-item"><img src="deco/DEC10.jpg" alt="DEC10" class="item-img">     
+    
+    <!-- Duplicated items for infinite loop effect -->
+    <div class="roller-item"><img src="images/darklightseries.png" alt="Dark Light"></div>
+    <div class="roller-item"><img src="images/discseries.png" alt="Disc Series"></div>
+    <div class="roller-item"><img src="images/eggseries.png" alt="Egg Series"></div>
+    <div class="roller-item"><img src="images/snoot02.png" alt="Snoot 02"></div>
+    <div class="roller-item"><img src="images/TUBEPRO.png" alt="Tube Projector">
+    <div class="roller-item"><img src="images/CUBEPRO.png" alt="Cube Projector">
+    <div class="roller-item"><img src="deco/DEC02.jpg" alt="DEC02" class="item-img">
+    <div class="roller-item"><img src="deco/DEC04.jpg" alt="DEC04" class="item-img">
+    <div class="roller-item"><img src="deco/DEC07.jpg" alt="DEC07" class="item-img">
+    <div class="roller-item"><img src="deco/DEC09.jpg" alt="DEC09" class="item-img">
+    <div class="roller-item"><img src="deco/DEC10.jpg" alt="DEC10" class="item-img">
   </div>
 </section>
 
