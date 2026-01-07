@@ -11,9 +11,12 @@
     a { text-decoration: none; color: inherit; }
 
     /* Nav stays consistent */
-    header { border-bottom: 1px solid var(--border); padding: 16px; background: white; }
-    .nav-container { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-weight: 700; font-size: 22px; color: var(--primary); }
+     header { background: #ffffff; border-bottom: 1px solid #e5e7eb; position: sticky; top: 0; z-index: 1000; }
+    .nav { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
+    .logo img { height: 60px; width: auto; display: block; }
+    .nav ul { list-style: none; display: flex; gap: 30px; }
+    .nav ul li a { font-weight: 600; font-size: 16px; color: var(--primary); transition: 0.3s; }
+    .nav ul li a:hover { color: var(--accent); }
 
     /* Category Header */
     .category-banner { background: #f9fafb; padding: 60px 16px; text-align: center; border-bottom: 1px solid var(--border); }
@@ -33,10 +36,18 @@
 <body>
 
 <header>
-  <div class="nav-container">
-    <a href="index.html" class="logo">SEAD ELECTRIC</a>
-    <nav><a href="product.html">← Back to All Categories</a></nav>
-  </div>
+  <nav class="nav">
+    <div class="logo">
+      <a href="index.html">
+        <img src="images/SEADELECTRIC.png" alt="SEAD ELECTRIC"></a>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="product.html">Products</a></li>
+      <li><a href="distributors.html">Distributors</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 </header>
 
 <div class="category-banner">
