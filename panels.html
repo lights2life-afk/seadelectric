@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ceiling & Panel Light | SEAD ELECTRIC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { 
+        --primary: #0a2540; 
+        --accent: #f59e0b; 
+        --border: #e5e7eb; 
+        --text: #1f2937; 
+        --text-muted: #6b7280;
+    }
+    body { font-family: 'Inter', sans-serif; margin: 0; color: var(--text); background: #fff; line-height: 1.5; }
+    a { text-decoration: none; color: inherit; }
+
+    /* --- HEADER (Fixed & Cleaned) --- */
+    header { background: #ffffff; border-bottom: 1px solid #e5e7eb; position: sticky; top: 0; z-index: 1000; }
+    .nav { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
+    .logo img { height: 70px; width: auto; display: block; }
+    .nav ul { list-style: none; display: flex; gap: 30px; margin: 0; padding: 0; }
+    .nav ul li a { font-weight: 600; font-size: 16px; color: var(--primary); transition: 0.3s; }
+    .nav ul li a:hover { color: var(--accent); }
+
+    /* --- CATEGORY BANNER --- */
+    .category-banner { background: #f9fafb; padding: 60px 16px; text-align: center; border-bottom: 1px solid var(--border); }
+    .breadcrumb { font-size: 14px; color: #5d626d; margin-bottom: 10px; }
+    .breadcrumb a { color: var(--accent); font-weight: 600; }
+
+    /* --- PRODUCT GRID --- */
+    .container { max-width: 1200px; margin: 40px auto; padding: 0 16px; }
+    .item-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 24px; }
+    
+    .item-card { 
+        border: 1px solid var(--border); 
+        padding: 15px; 
+        border-radius: 4px; 
+        text-align: center; 
+        transition: 0.3s; 
+        cursor: pointer;
+        background: #fff;
+    }
+    .item-card:hover { border-color: var(--accent); box-shadow: 0 8px 16px rgba(0,0,0,0.05); transform: translateY(-3px); }
+    .item-img { width: 100%; height: 200px; object-fit: contain; margin-bottom: 15px; background: #fcfcfc; }
+    .item-name { font-weight: 600; font-size: 16px; color: var(--primary); margin-bottom: 5px; }
+    .item-specs { font-size: 13px; color: #494d57; }
+
+    /* --- MODAL POPUP STYLING --- */
+    .modal-overlay {
+        display: none; 
+        position: fixed; 
+        z-index: 2000; 
+        left: 0; top: 0;
+        width: 100%; height: 100%;
+        background-color: rgba(0,0,0,0.7);
+        backdrop-filter: blur(4px);
+        overflow-y: auto;
+    }
+    .modal-content {
+        background-color: #fff;
+        margin: 5vh auto;
+        width: 90%;
+        max-width: 900px;
+        border-radius: 8px;
+        position: relative;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        animation: slideUp 0.3s ease-out;
+        overflow: hidden;
+    }
+    @keyframes slideUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    .close-btn { position: absolute; right: 20px; top: 15px; font-size: 32px; cursor: pointer; color: #333; z-index: 10; }
+    .modal-body { display: flex; flex-wrap: wrap; }
+    .modal-img-side { flex: 1; min-width: 300px; background: #f9fafb; padding: 30px; display: flex; align-items: center; justify-content: center; }
+    .modal-img-side img { max-width: 100%; height: auto; }
+    .modal-info-side { flex: 1.2; padding: 40px; min-width: 300px; }
+    .modal-info-side h2 { color: var(--primary); margin-top: 0; margin-bottom: 10px; }
+    .variant-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    .variant-table th { text-align: left; font-size: 12px; color: var(--accent); border-bottom: 2px solid var(--border); padding: 10px 5px; text-transform: uppercase; }
+    .variant-table td { padding: 12px 5px; border-bottom: 1px solid var(--border); font-size: 14px; }
+    .btn-enquiry { background: var(--primary); color: white; padding: 12px 25px; display: inline-block; border-radius: 4px; font-weight: 600; margin-top: 10px; }
+
+    /* --- FOOTER --- */
+    footer { background: #020617; color: #cbd5e1; padding: 60px 16px; margin-top: 60px; }
+    .footer-content { max-width: 1200px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
+    .footer-content h4 { color: #fff; margin-bottom: 20px; }
+    .footer-links p { margin-bottom: 10px; font-size: 14px; }
+
+    @media (max-width: 768px) {
+        .modal-img-side, .modal-info-side { flex: 100%; }
+        .nav ul { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <div class="logo">
+      <a href="index.html"><img src="images/SEADELECTRIC.png" alt="SEAD ELECTRIC"></a>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="product.html">Products</a></li>
+      <li><a href="distributors.html">Distributors</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="category-banner">
+  <div class="breadcrumb"><a href="product.html">← Products</a> / Interior Lighting</div>
+  <h1>Ceiling & Panel lights</h1>
+  <p>Discover our range of professional Ceiling & Panel lights.</p>
+</div>
+
+<div class="container">
+  <div class="item-grid">
+    
+    <div class="item-card" onclick="openModal('pn01')">
+      <img src="images/panel.png" alt="PN01" class="item-img">
+      <div class="item-name">SEAD PN01 - 36W-40W</div>
+      <div class="item-specs">CRI 90 | 3000K-6000K | IP20</div>
+    </div>
+
+    <div class="item-card" onclick="openModal('pn02')">
+      <img src="images/panel.png" alt="PN02" class="item-img">
+      <div class="item-name">SEAD PN02 - 36W-40W</div>
+      <div class="item-specs">CRI 90 | 3000K-6000K | IP65</div>
+    </div>
+
+    <div class="item-card" onclick="openModal('rdpn01')">
+      <img src="images/RDPN01.jpeg" alt="RDPN01" class="item-img">
+      <div class="item-name">SEAD RDPN01 - 12W-150W</div>
+      <div class="item-specs">CRI 90 | 3000K-6000K | IP20</div>
+    </div>
+
+    <div class="item-card" onclick="openModal('cl01')">
+      <img src="images/CL001.png" alt="CL01" class="item-img">
+      <div class="item-name">SEAD CL01 - 12W-30W</div>
+      <div class="item-specs">CRI 90 | Anti-Glare | IP44</div>
+    </div>
+
+    <div class="item-card" onclick="openModal('dl10')">
+      <img src="images/DL10.png" alt="DL10" class="item-img">
+      <div class="item-name">SEAD DL10 - 7W-20W</div>
+      <div class="item-specs">CRI 90 | Anti-Glare | Dimming</div>
+    </div>
+
+    <div class="item-card" onclick="openModal('dl11')">
+      <img src="images/DL11.png" alt="DL11" class="item-img">
+      <div class="item-name">SEAD DL11 - 12W-50W</div>
+      <div class="item-specs">CRI 90 | 3000K-6000K | IP44</div>
+    </div>
+
+    <div class="item-card" onclick="openModal('dl12')">
+      <img src="images/DL12.png" alt="DL12" class="item-img">
+      <div class="item-name">SEAD DL12 - 7W-15W</div>
+      <div class="item-specs">CRI 90 | Anti-Glare | Dimming</div>
+    </div>
+
+    <div class="item-card" onclick="openModal('ldl01')">
+      <img src="images/LDL1.png" alt="LDL01" class="item-img">
+      <div class="item-name">SEAD LDL01 - 5W-25W</div>
+      <div class="item-specs">CRI 90 | 3000K-6000K | IP20</div>
+    </div>
+
+  </div>
+</div>
+
+<div id="productModal" class="modal-overlay">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <div id="modalData" class="modal-body"></div>
+    </div>
+</div>
+
+<footer>
+  <div class="footer-content">
+    <div>
+      <h4>SEAD ELECTRIC</h4>
+      <p>Dubai Free Zone lighting supplier serving global markets.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <p><a href="product.html">Products</a></p>
+      <p><a href="contact.html">Contact</a></p>
+      <p><a href="distributors.html">Distributor Program</a></p>
+    </div>
+    <div>
+      <h4>Contact Info</h4>
+      <p>Email: sales@seadelectric.com</p>
+      <p>Dubai, United Arab Emirates</p>
+    </div>
+  </div>
+  <p style="text-align:center; margin-top:50px; font-size:12px; opacity:0.6;">&copy; 2026 SEAD ELECTRIC. All rights reserved.</p>
+</footer>
+
+<script>
+    const products = {
+        'dl01': {
+            name: "SEAD PN01 Series",
+            desc: "Professional Commercial panel light IP20.",
+            img: "images/panel.png",
+            variants: [
+                { model: "SD-PN01-36", power: "36W", lumens: "3960lm", size: "600*600mm" },
+                { model: "SD-PN01-40", power: "40W", lumens: "4400lm", size: "300*1200mm" }
+            ]
+        },
+        'dl02': {
+            name: "SEAD PN02 Series",
+            desc: "Professional Commercial panel light IP65.",
+            img: "images/panel.png",
+            variants: [
+                { model: "SD-PN02-36", power: "36W", lumens: "3960lm", size: "600*600mm" },
+                { model: "SD-PN02-40", power: "40W", lumens: "4400lm", size: "300*1200mm" }
+            ]
+        },
+        'dl03': {
+            name: "SEAD RDPN01 Series",
+            desc: "Round Ceiling light for residential and commercial use.",
+            img: "images/RDPN.jpeg",
+            variants: [
+                { model: "SD-RDPN01-12", power: "12W", lumens: "960lm", size: "ø160mm" },
+                { model: "SD-RDPN01-20", power: "20W", lumens: "1600lm", size: "ø260mm" },
+                { model: "SD-RDPN01-30", power: "30W", lumens: "2400lm", size: "ø350mm" },
+                { model: "SD-RDPN01-45", power: "45W", lumens: "3600lm", size: "ø480mm" },
+                { model: "SD-RDPN01-54", power: "54W", lumens: "4320lm", size: "ø600mm" },
+                { model: "SD-RDPN01-60", power: "60W", lumens: "4800lm", size: "ø800mm" },
+                { model: "SD-RDPN01-90", power: "90W", lumens: "7200lm", size: "ø900mm" },
+                { model: "SD-RDPN01-150", power: "150W", lumens: "12000lm", cutout: "ø1200mm" }
+            ]
+        },
+        'cl01': {
+            name: "SEAD CL01 Series",
+            desc: "Deep-recessed anti-glare Surface downlight with premium UGR control.",
+            img: "images/CL01.png",
+            variants: [
+                { model: "SD-CL01-12", power: "12W", lumens: "1200lm", Size: "ø75*90mm" },
+                { model: "SD-CL01-20", power: "20W", lumens: "2000lm", cutout: "ø91*112mm" },
+                { model: "SD-CL01-35", power: "30W", lumens: "3000lm", cutout: "ø128*137mm" }
+            ]
+        },
+        'dl10': {
+            name: "SEAD DL10 Series",
+            desc: "Modern round adjustable downlight for targeted accent lighting.",
+            img: "images/DL10.png",
+            variants: [
+                { model: "SD-DL10-07", power: "7W", lumens: "560lm", cutout: "ø55mm" },
+                { model: "SD-DL10-12", power: "12W", lumens: "960lm", cutout: "ø75mm" },
+                { model: "SD-DL10-20", power: "20W", lumens: "1600lm", cutout: "ø95mm" }
+            ]
+        },
+        'dl11': {
+            name: "SEAD DL11 Series",
+            desc: "High-power recessed downlight for high ceilings and retail environments.",
+            img: "images/DL11.png",
+            variants: [
+                { model: "SD-DL11-12", power: "12W", lumens: "1000lm", cutout: "ø75mm" },
+                { model: "SD-DL11-18", power: "18W", lumens: "1800lm", cutout: "ø90mm" },
+                { model: "SD-DL11-30", power: "30W", lumens: "3000lm", cutout: "ø125mm" },
+                { model: "SD-DL11-40", power: "40W", lumens: "4000lm", cutout: "ø165mm" },
+                { model: "SD-DL11-50", power: "50W", lumens: "5000lm", cutout: "ø200mm" }
+            ]
+        },
+        'dl12': {
+            name: "SEAD DL12 Series",
+            desc: "Slim-bezel professional downlight with architectural finish.",
+            img: "images/DL12.png",
+            variants: [
+                { model: "SD-DL12-07", power: "7W", lumens: "700lm", cutout: "ø65mm" },
+                { model: "SD-DL12-12", power: "12W", lumens: "1100lm", cutout: "ø75mm" },
+                { model: "SD-DL12-15", power: "15W", lumens: "1425lm", cutout: "ø85mm" }
+            ]
+        },
+        'ldl01': {
+            name: "SEAD LDL01 Linear Series",
+            desc: "Miniature linear recessed downlight for seamless architectural integration.",
+            img: "images/LDL1.png",
+            variants: [
+                { model: "SD-LDL1-5", power: "5W", lumens: "400lm", cutout: "55x55mm" },
+                { model: "SD-LDL1-15", power: "15W", lumens: "1200lm", cutout: "145x55mm" },
+                { model: "SD-LDL1-25", power: "25W", lumens: "2400lm", cutout: "280x55mm" }
+            ]
+        }
+    };
+
+    function openModal(id) {
+        const product = products[id];
+        if(!product) return;
+        const modal = document.getElementById('productModal');
+        const container = document.getElementById('modalData');
+
+        const rows = product.variants.map(v => `
+            <tr>
+                <td><strong>${v.model}</strong></td>
+                <td>${v.power}</td>
+                <td>${v.lumens}</td>
+                <td>${v.cutout}</td>
+            </tr>
+        `).join('');
+
+        container.innerHTML = `
+            <div class="modal-img-side"><img src="${product.img}" alt="${product.name}"></div>
+            <div class="modal-info-side">
+                <h2>${product.name}</h2>
+                <p>${product.desc}</p>
+                <table class="variant-table">
+                    <thead><tr><th>Model</th><th>Wattage</th><th>Output</th><th>Cut-out</th></tr></thead>
+                    <tbody>${rows}</tbody>
+                </table>
+                <a href="contact.html" class="btn-enquiry">REQUEST QUOTE</a>
+            </div>
+        `;
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        document.getElementById('productModal').style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+
+    window.onclick = function(event) {
+        if (event.target == document.getElementById('productModal')) closeModal();
+    }
+</script>
+</body>
+</html>
