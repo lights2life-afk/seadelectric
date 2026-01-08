@@ -2,39 +2,54 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Contact Us | SEAD ELECTRIC</title>
+  <title>Contact & Regional Partners | SEAD ELECTRIC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root { --primary: #0a2540; --accent: #f59e0b; --text: #1f2937; --bg: #f9fafb; }
+    :root { --primary: #0a2540; --accent: #f59e0b; --text: #1f2937; --bg-light: #f9fafb; --border: #e5e7eb; }
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-    body { background-color: #fff; color: var(--text); line-height: 1.6; }
-    a { text-decoration: none; }
+    body { background-color: white; color: var(--text); line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
 
-    /* HEADER */
-    header { background: #ffffff; border-bottom: 1px solid #e5e7eb; position: sticky; top: 0; z-index: 1000; }
+    /* --- HEADER (Standardized) --- */
+    header { background: #ffffff; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; }
     .nav { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
-    .logo img { height: 70px; width: auto; display: block; }
+    .logo img { height: 60px; width: auto; display: block; }
     .nav ul { list-style: none; display: flex; gap: 30px; }
     .nav ul li a { font-weight: 600; font-size: 16px; color: var(--primary); transition: 0.3s; }
     .nav ul li a:hover { color: var(--accent); }
 
-    /* CONTENT */
-    .contact-hero { background: var(--accent); padding: 60px 20px; text-align: center; }
-    .contact-hero h1 { font-size: 36px; color: var(--primary); margin-bottom: 10px; }
-    
-    .container { max-width: 800px; margin: 50px auto; padding: 0 20px; }
-    .contact-card { background: white; border: 1px solid #e5e7eb; padding: 40px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+    /* --- HERO --- */
+    .hero { background: var(--bg-light); padding: 60px 20px; text-align: center; border-bottom: 1px solid var(--border); }
+    .hero h1 { font-size: 36px; color: var(--primary); margin-bottom: 10px; }
+
+    /* --- CONTACT SECTION --- */
+    .main-container { max-width: 1200px; margin: 60px auto; padding: 0 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+
+    .form-section h2, .partner-section h2 { margin-bottom: 25px; color: var(--primary); font-size: 24px; }
 
     /* FORM STYLING */
     form { display: grid; gap: 20px; }
-    input, textarea { width: 100%; padding: 14px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 16px; outline: none; transition: 0.3s; }
-    input:focus, textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1); }
-    button { background: var(--primary); color: white; padding: 16px; border: none; border-radius: 4px; font-weight: 700; font-size: 16px; cursor: pointer; transition: 0.3s; }
+    input, textarea, select { width: 100%; padding: 14px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 16px; }
+    input:focus, textarea:focus { border-color: var(--accent); outline: none; }
+    button { background: var(--primary); color: white; padding: 16px; border: none; border-radius: 4px; font-weight: 700; cursor: pointer; transition: 0.3s; }
     button:hover { background: #1a3a5a; transform: translateY(-2px); }
 
-    footer { background: #020617; color: #cbd5e1; padding: 40px 20px; text-align: center; margin-top: 60px; }
-    @media (max-width: 768px) { .nav { flex-direction: column; gap: 15px; } .nav ul { gap: 15px; } }
+    /* PARTNER CARDS */
+    .partner-card { border: 1px solid var(--border); padding: 30px; border-radius: 8px; background: #fff; position: relative; }
+    .partner-card::before { content: ""; position: absolute; left: 0; top: 0; height: 100%; width: 4px; background: var(--accent); border-radius: 8px 0 0 8px; }
+    .tag { display: inline-block; background: var(--primary); color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-bottom: 15px; }
+    .partner-name { font-size: 20px; font-weight: 700; color: var(--primary); margin-bottom: 10px; }
+    .partner-info { font-size: 15px; color: #6b7280; margin-bottom: 5px; }
+
+    /* FOOTER */
+    footer { background: #020617; color: #cbd5e1; padding: 40px 20px; text-align: center; }
+
+    /* RESPONSIVE */
+    @media (max-width: 850px) {
+      .main-container { grid-template-columns: 1fr; gap: 40px; }
+      .nav ul { display: none; } /* Simplified mobile menu */
+    }
   </style>
 </head>
 <body>
@@ -42,39 +57,68 @@
 <header>
   <nav class="nav">
     <div class="logo">
-      <a href="index.html">
-        <img src="images/SEADELECTRIC.png" alt="SEAD ELECTRIC"></a>
+      <a href="index.html"><img src="SELOGO.png" alt="SEAD ELECTRIC"></a>
     </div>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="product.html">Products</a></li>
+      <li><a href="oem.html">OEM</a></li>
       <li><a href="distributors.html">Distributors</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 </header>
 
-<section class="contact-hero">
-  <h1>Contact Us</h1>
-  <p>Our team is ready to assist with your lighting projects and OEM inquiries.</p>
+<section class="hero">
+  <h1>Get in Touch</h1>
+  <p>Connect with our global headquarters in Dubai or our regional partners.</p>
 </section>
 
-<div class="container">
-  <div class="contact-card">
-    <!-- CONTACT FORM (Integration with Formspree) -->
+<div class="main-container">
+  
+  <!-- FORM SECTION -->
+  <div class="form-section">
+    <h2>Send us an Inquiry</h2>
     <form action="https://formspree.io/f/xlgdykyr" method="POST">
-      <input type="text" name="company" placeholder="Company Name" required>
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="text" name="company" placeholder="Company Name">
       <input type="email" name="email" placeholder="Email Address" required>
-      <input type="text" name="subject" placeholder="Subject / Product of Interest">
-      <textarea name="message" rows="5" placeholder="Detailed Requirement" required></textarea>
-      <button type="submit">Send Inquiry</button>
+      <select name="region">
+        <option value="General">Inquiry Type</option>
+        <option value="Project">Project Requirement</option>
+        <option value="Distribution">Distribution Application</option>
+        <option value="OEM">OEM/Private Label</option>
+      </select>
+      <textarea name="message" rows="6" placeholder="Your Detailed Requirement" required></textarea>
+      <button type="submit">Submit Inquiry</button>
     </form>
   </div>
-  
-  <div style="margin-top: 40px; text-align: center; color: #6b7280;">
-      <p>Direct Email: <strong>sales@seadelectric.com</strong></p>
-      <p>Location: Dubai, United Arab Emirates</p>
+
+  <!-- PARTNER SECTION -->
+  <div class="partner-section">
+    <h2>Regional Partners</h2>
+    
+    <!-- KSA PARTNER CARD -->
+    <div class="partner-card">
+      <div class="tag">KSA</div>
+      <div class="partner-name">Kingdom of Saudi Arabia</div>
+      <p class="partner-info"><strong>Regional Support:</strong> Riyadh / Jeddah / Dammam</p>
+      <p class="partner-info"><strong>Services:</strong> Project Supply, Technical Support, Local Warehousing</p>
+      <p class="partner-info" style="margin-top:15px;">Contact our partner Spectra International Trading Co. for localized project support in the Kingdom.</p>
+      <p style="margin-top:10px; font-weight: 600; color: var(--accent);">Email: juned@spectraelectricals.com</p>
+    </div>
+
+    <!-- GLOBAL HQ -->
+    <div class="partner-card" style="margin-top: 30px; border-color: var(--primary);">
+      <div class="tag" style="background: var(--accent); color: var(--primary);">Global HQ</div>
+      <div class="partner-name">Dubai, United Arab Emirates</div>
+      <p class="partner-info">Meydan Hotel, Nad Al Sheba</p>
+      <p class="partner-info">Email: sales@seadelectric.com</p>
+      <p class="partner-info">WhatsApp: +971508505637</p>
+    </div>
+
   </div>
+
 </div>
 
 <footer>
