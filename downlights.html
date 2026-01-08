@@ -13,21 +13,21 @@
         --text: #1f2937; 
         --text-muted: #6b7280;
     }
-    body { font-family: 'Inter', sans-serif; margin: 0; color: var(--text); background: #fff; }
+    body { font-family: 'Inter', sans-serif; margin: 0; color: var(--text); background: #fff; line-height: 1.5; }
     a { text-decoration: none; color: inherit; }
 
-    /* --- HEADER --- */
+    /* --- HEADER (Fixed & Cleaned) --- */
     header { background: #ffffff; border-bottom: 1px solid #e5e7eb; position: sticky; top: 0; z-index: 1000; }
     .nav { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
     .logo img { height: 70px; width: auto; display: block; }
-    .nav ul { list-style: none; display: flex; gap: 30px; }
+    .nav ul { list-style: none; display: flex; gap: 30px; margin: 0; padding: 0; }
     .nav ul li a { font-weight: 600; font-size: 16px; color: var(--primary); transition: 0.3s; }
     .nav ul li a:hover { color: var(--accent); }
 
     /* --- CATEGORY BANNER --- */
     .category-banner { background: #f9fafb; padding: 60px 16px; text-align: center; border-bottom: 1px solid var(--border); }
     .breadcrumb { font-size: 14px; color: #5d626d; margin-bottom: 10px; }
-    .breadcrumb a:hover { color: var(--accent); }
+    .breadcrumb a { color: var(--accent); font-weight: 600; }
 
     /* --- PRODUCT GRID --- */
     .container { max-width: 1200px; margin: 40px auto; padding: 0 16px; }
@@ -60,7 +60,7 @@
     }
     .modal-content {
         background-color: #fff;
-        margin: 50px auto;
+        margin: 5vh auto;
         width: 90%;
         max-width: 900px;
         border-radius: 8px;
@@ -75,10 +75,10 @@
     .modal-img-side { flex: 1; min-width: 300px; background: #f9fafb; padding: 30px; display: flex; align-items: center; justify-content: center; }
     .modal-img-side img { max-width: 100%; height: auto; }
     .modal-info-side { flex: 1.2; padding: 40px; min-width: 300px; }
-    .modal-info-side h2 { color: var(--primary); margin-bottom: 10px; }
+    .modal-info-side h2 { color: var(--primary); margin-top: 0; margin-bottom: 10px; }
     .variant-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
     .variant-table th { text-align: left; font-size: 12px; color: var(--accent); border-bottom: 2px solid var(--border); padding: 10px 5px; text-transform: uppercase; }
-    .variant-table td { padding: 10px 5px; border-bottom: 1px solid var(--border); font-size: 14px; }
+    .variant-table td { padding: 12px 5px; border-bottom: 1px solid var(--border); font-size: 14px; }
     .btn-enquiry { background: var(--primary); color: white; padding: 12px 25px; display: inline-block; border-radius: 4px; font-weight: 600; margin-top: 10px; }
 
     /* --- FOOTER --- */
@@ -110,7 +110,7 @@
 </header>
 
 <div class="category-banner">
-  <div class="breadcrumb"><a href="product.html">Products</a> / Interior Lighting</div>
+  <div class="breadcrumb"><a href="product.html">← Products</a> / Interior Lighting</div>
   <h1>Recessed Downlights</h1>
   <p>Discover our range of professional commercial downlights.</p>
 </div>
@@ -118,56 +118,48 @@
 <div class="container">
   <div class="item-grid">
     
-    <!-- ITEM 1 -->
     <div class="item-card" onclick="openModal('dl01')">
       <img src="images/d1.png" alt="DL01" class="item-img">
       <div class="item-name">SEAD DL01 - 18W-48W</div>
       <div class="item-specs">CRI 90 | 3000K-6000K | IP65</div>
     </div>
 
-    <!-- ITEM 2 -->
     <div class="item-card" onclick="openModal('dl02')">
       <img src="images/d2.png" alt="DL02" class="item-img">
       <div class="item-name">SEAD DL02 - 15W-42W</div>
       <div class="item-specs">CRI 90 | Diffused | IP54</div>
     </div>
 
-    <!-- ITEM 3 -->
     <div class="item-card" onclick="openModal('dl03')">
       <img src="images/DL03.png" alt="DL03" class="item-img">
       <div class="item-name">SEAD DL03 - 7W-25W</div>
       <div class="item-specs">CRI 90 | 3000K-6000K | IP44</div>
     </div>
 
-    <!-- ITEM 4 -->
     <div class="item-card" onclick="openModal('dl04')">
       <img src="images/DL04.png" alt="DL04" class="item-img">
       <div class="item-name">SEAD DL04 - 10W-35W</div>
       <div class="item-specs">CRI 90 | Anti-Glare | IP54</div>
     </div>
 
-    <!-- ITEM 5 -->
     <div class="item-card" onclick="openModal('dl10')">
       <img src="images/DL10.png" alt="DL10" class="item-img">
       <div class="item-name">SEAD DL10 - 7W-20W</div>
       <div class="item-specs">CRI 90 | Anti-Glare | Dimming</div>
     </div>
 
-    <!-- ITEM 6 -->
     <div class="item-card" onclick="openModal('dl11')">
       <img src="images/DL11.png" alt="DL11" class="item-img">
       <div class="item-name">SEAD DL11 - 12W-50W</div>
       <div class="item-specs">CRI 90 | 3000K-6000K | IP44</div>
     </div>
 
-    <!-- ITEM 7 -->
     <div class="item-card" onclick="openModal('dl12')">
       <img src="images/DL12.png" alt="DL12" class="item-img">
       <div class="item-name">SEAD DL12 - 7W-15W</div>
       <div class="item-specs">CRI 90 | Anti-Glare | Dimming</div>
     </div>
 
-    <!-- ITEM 8 -->
     <div class="item-card" onclick="openModal('ldl01')">
       <img src="images/LDL1.png" alt="LDL01" class="item-img">
       <div class="item-name">SEAD LDL01 - 5W-25W</div>
@@ -177,13 +169,10 @@
   </div>
 </div>
 
-<!-- THE MODAL OVERLAY -->
 <div id="productModal" class="modal-overlay">
     <div class="modal-content">
         <span class="close-btn" onclick="closeModal()">&times;</span>
-        <div id="modalData" class="modal-body">
-            <!-- Data injected by JS -->
-        </div>
+        <div id="modalData" class="modal-body"></div>
     </div>
 </div>
 
@@ -212,13 +201,13 @@
     const products = {
         'dl01': {
             name: "SEAD DL01 Series",
-            desc: "Professional Commercial downlight with UGR<13 Beam 60° and IP65 protection for wet areas.",
+            desc: "Professional Commercial downlight with UGR < 13 Beam 60° and IP65 protection for wet areas.",
             img: "images/d1.png",
             variants: [
                 { model: "SD-DL01-18", power: "18W", lumens: "1980lm", cutout: "ø115mm" },
                 { model: "SD-DL01-28", power: "28W", lumens: "3080lm", cutout: "ø140mm" },
-                { model: "SD-DL01-38", power: "38W", lumens: "4180lm", cutout: "ø170mm" }
-		{ model: "SD-DL01-48", power: "48W", lumens: "5280lm", cutout: "ø200mm" }
+                { model: "SD-DL01-38", power: "38W", lumens: "4180lm", cutout: "ø170mm" },
+                { model: "SD-DL01-48", power: "48W", lumens: "5280lm", cutout: "ø200mm" }
             ]
         },
         'dl02': {
@@ -226,11 +215,11 @@
             desc: "Diffused wide-beam downlight for general ambient lighting in commercial spaces.",
             img: "images/d2.png",
             variants: [
-                { model: "SD-DL02-12", power: "15W", lumens: "1350lm", cutout: "ø90mm" },
+                { model: "SD-DL02-15", power: "15W", lumens: "1350lm", cutout: "ø90mm" },
                 { model: "SD-DL02-20", power: "20W", lumens: "1800lm", cutout: "ø115mm" },
-                { model: "SD-DL02-25", power: "25W", lumens: "2250lm", cutout: "ø140mm" }
-		{ model: "SD-DL02-35", power: "55W", lumens: "3150lm", cutout: "ø170mm" }
-		{ model: "SD-DL02-42", power: "42W", lumens: "3780lm", cutout: "ø200mm" }
+                { model: "SD-DL02-25", power: "25W", lumens: "2250lm", cutout: "ø140mm" },
+                { model: "SD-DL02-35", power: "35W", lumens: "3150lm", cutout: "ø170mm" },
+                { model: "SD-DL02-42", power: "42W", lumens: "3780lm", cutout: "ø200mm" }
             ]
         },
         'dl03': {
@@ -239,7 +228,7 @@
             img: "images/DL03.png",
             variants: [
                 { model: "SD-DL03-07", power: "7W", lumens: "560lm", cutout: "ø75mm" },
-                { model: "SD-DL03-12", power: "12W", lumens: "1020lm", cutout: "ø110mm" }
+                { model: "SD-DL03-12", power: "12W", lumens: "1020lm", cutout: "ø110mm" },
                 { model: "SD-DL03-25", power: "25W", lumens: "2250lm", cutout: "ø140mm" }
             ]
         },
@@ -249,9 +238,9 @@
             img: "images/DL04.png",
             variants: [
                 { model: "SD-DL04-10", power: "10W", lumens: "900lm", cutout: "ø85mm" },
-                { model: "SD-DL04-13", power: "13W", lumens: "1170lm", cutout: "ø95mm" }
-                { model: "SD-DL04-18", power: "18W", lumens: "1620lm", cutout: "ø130mm" }
-                { model: "SD-DL04-25", power: "25W", lumens: "2250lm", cutout: "ø155mm" }
+                { model: "SD-DL04-13", power: "13W", lumens: "1170lm", cutout: "ø95mm" },
+                { model: "SD-DL04-18", power: "18W", lumens: "1620lm", cutout: "ø130mm" },
+                { model: "SD-DL04-25", power: "25W", lumens: "2250lm", cutout: "ø155mm" },
                 { model: "SD-DL04-35", power: "35W", lumens: "3150lm", cutout: "ø200mm" }
             ]
         },
@@ -261,7 +250,7 @@
             img: "images/DL10.png",
             variants: [
                 { model: "SD-DL10-07", power: "7W", lumens: "560lm", cutout: "ø55mm" },
-                { model: "SD-DL10-12", power: "12W", lumens: "960lm", cutout: "ø75mm" }
+                { model: "SD-DL10-12", power: "12W", lumens: "960lm", cutout: "ø75mm" },
                 { model: "SD-DL10-20", power: "20W", lumens: "1600lm", cutout: "ø95mm" }
             ]
         },
@@ -271,9 +260,9 @@
             img: "images/DL11.png",
             variants: [
                 { model: "SD-DL11-12", power: "12W", lumens: "1000lm", cutout: "ø75mm" },
-                { model: "SD-DL11-18", power: "18W", lumens: "1800lm", cutout: "ø90mm" }
-                { model: "SD-DL11-30", power: "30W", lumens: "3000lm", cutout: "ø125mm" }
-                { model: "SD-DL11-40", power: "40W", lumens: "4000lm", cutout: "ø165mm" }
+                { model: "SD-DL11-18", power: "18W", lumens: "1800lm", cutout: "ø90mm" },
+                { model: "SD-DL11-30", power: "30W", lumens: "3000lm", cutout: "ø125mm" },
+                { model: "SD-DL11-40", power: "40W", lumens: "4000lm", cutout: "ø165mm" },
                 { model: "SD-DL11-50", power: "50W", lumens: "5000lm", cutout: "ø200mm" }
             ]
         },
@@ -283,17 +272,17 @@
             img: "images/DL12.png",
             variants: [
                 { model: "SD-DL12-07", power: "7W", lumens: "700lm", cutout: "ø65mm" },
-                { model: "SD-DL12-12", power: "12W", lumens: "1100lm", cutout: "ø75mm" }
+                { model: "SD-DL12-12", power: "12W", lumens: "1100lm", cutout: "ø75mm" },
                 { model: "SD-DL12-15", power: "15W", lumens: "1425lm", cutout: "ø85mm" }
             ]
         },
         'ldl01': {
             name: "SEAD LDL01 Linear Series",
-            desc: "Miniature linear recessed downlight (darklight effect) for seamless architectural integration.",
+            desc: "Miniature linear recessed downlight for seamless architectural integration.",
             img: "images/LDL1.png",
             variants: [
                 { model: "SD-LDL1-5", power: "5W", lumens: "400lm", cutout: "55x55mm" },
-                { model: "SD-LDL1-15", power: "15W", lumens: "120lm", cutout: "145x55mm" },
+                { model: "SD-LDL1-15", power: "15W", lumens: "1200lm", cutout: "145x55mm" },
                 { model: "SD-LDL1-25", power: "25W", lumens: "2400lm", cutout: "280x55mm" }
             ]
         }
@@ -301,6 +290,7 @@
 
     function openModal(id) {
         const product = products[id];
+        if(!product) return;
         const modal = document.getElementById('productModal');
         const container = document.getElementById('modalData');
 
@@ -314,21 +304,12 @@
         `).join('');
 
         container.innerHTML = `
-            <div class="modal-img-side">
-                <img src="${product.img}" alt="${product.name}">
-            </div>
+            <div class="modal-img-side"><img src="${product.img}" alt="${product.name}"></div>
             <div class="modal-info-side">
                 <h2>${product.name}</h2>
                 <p>${product.desc}</p>
                 <table class="variant-table">
-                    <thead>
-                        <tr>
-                            <th>Model</th>
-                            <th>Wattage</th>
-                            <th>Output</th>
-                            <th>Cut-out</th>
-                        </tr>
-                    </thead>
+                    <thead><tr><th>Model</th><th>Wattage</th><th>Output</th><th>Cut-out</th></tr></thead>
                     <tbody>${rows}</tbody>
                 </table>
                 <a href="contact.html" class="btn-enquiry">REQUEST QUOTE</a>
@@ -347,6 +328,5 @@
         if (event.target == document.getElementById('productModal')) closeModal();
     }
 </script>
-
 </body>
 </html>
