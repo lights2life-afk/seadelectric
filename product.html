@@ -47,6 +47,7 @@
       overflow: hidden; 
       transition: all 0.3s ease; 
       background: #fff;
+      cursor: pointer; /* Indicates it is clickable */
     }
 
     .product-card:hover { 
@@ -58,7 +59,7 @@
     .image-box { 
       width: 100%; 
       height: 300px; 
-      background: #f3f4f6; /* Placeholder color while loading */
+      background: #f3f4f6; 
       display: flex;
       align-items: center;
       justify-content: center;
@@ -76,12 +77,112 @@
     .product-name { font-size: 20px; font-weight: 600; color: var(--primary); margin-bottom: 8px; }
     .product-desc { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
 
+    /* --- MODAL STYLING (The Popup) --- */
+    .modal-overlay {
+        display: none; 
+        position: fixed; 
+        z-index: 2000; 
+        left: 0; top: 0;
+        width: 100%; height: 100%;
+        background-color: rgba(0,0,0,0.7);
+        backdrop-filter: blur(4px);
+        overflow-y: auto;
+    }
+
+    .modal-content {
+        background-color: #fff;
+        margin: 50px auto;
+        padding: 0;
+        width: 90%;
+        max-width: 1000px;
+        border-radius: 8px;
+        position: relative;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        animation: slideUp 0.3s ease-out;
+    }
+
+    @keyframes slideUp {
+        from { transform: translateY(30px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+
+    .close-btn {
+        position: absolute;
+        right: 20px; top: 15px;
+        font-size: 32px;
+        cursor: pointer;
+        color: #333;
+        z-index: 10;
+    }
+
+    .modal-body {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .modal-img-side {
+        flex: 1;
+        min-width: 350px;
+        background: #f9fafb;
+        padding: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .modal-img-side img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 4px;
+    }
+
+    .modal-info-side {
+        flex: 1.2;
+        padding: 40px;
+        min-width: 350px;
+    }
+
+    .modal-info-side h2 { color: var(--primary); margin-bottom: 10px; font-size: 28px; }
+    .modal-info-side p { color: var(--text-muted); margin-bottom: 25px; }
+
+    /* Technical Table */
+    .variant-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 30px;
+    }
+    .variant-table th {
+        text-align: left;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: var(--accent);
+        border-bottom: 2px solid var(--border);
+        padding: 10px 5px;
+    }
+    .variant-table td {
+        padding: 12px 5px;
+        border-bottom: 1px solid var(--border);
+        font-size: 14px;
+    }
+    
+    .btn-enquiry {
+        background: var(--primary);
+        color: white;
+        padding: 12px 30px;
+        display: inline-block;
+        border-radius: 4px;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+    .btn-enquiry:hover { background: var(--accent); }
+
     /* --- FOOTER --- */
     footer { border-top: 1px solid var(--border); padding: 40px 16px; text-align: center; margin-top: 60px; color: var(--text-muted); font-size: 14px; }
 
-    @media (max-width: 640px) {
-      .product-grid { grid-template-columns: 1fr; }
-      .nav-links { display: none; } /* Hide menu on mobile for simplicity */
+    @media (max-width: 768px) {
+      .modal-img-side, .modal-info-side { flex: 100%; }
+      .modal-content { margin: 10px auto; width: 95%; }
+      .nav-links { display: none; }
     }
   </style>
 </head>
@@ -111,7 +212,7 @@
   <div class="product-grid">
     
     <!-- PRODUCT ITEM 1 -->
-    <div class="product-card">
+    <div class="product-card" onclick="openModal('dark-light')">
       <div class="image-box">
         <img src="images/darklightseries.png" alt="Recessed Downlight">
       </div>
@@ -123,7 +224,7 @@
     </div>
 
     <!-- PRODUCT ITEM 2 -->
-    <div class="product-card">
+    <div class="product-card" onclick="openModal('disc-series')">
       <div class="image-box">
         <img src="images/discseries.png" alt="Recessed Downlight">
       </div>
@@ -135,43 +236,43 @@
     </div>
 
     <!-- PRODUCT ITEM 3 -->
-    <div class="product-card">
+    <div class="product-card" onclick="openModal('egg-series')">
       <div class="image-box">
         <img src="images/eggseries.png" alt="Recessed Downlight">
       </div>
       <div class="content-box">
         <div class="category-label">Downlights</div>
         <div class="product-name">EGG Series</div>
-        <p class="product-desc">Recessed adjustable downlight with anti-glare technology and round shape light engine available in multi-spot options.</p>
+        <p class="product-desc">Recessed adjustable downlight with anti-glare technology and round shape light engine.</p>
       </div>
     </div>
 
     <!-- PRODUCT ITEM 4 -->
-    <div class="product-card">
+    <div class="product-card" onclick="openModal('pin-snoot')">
       <div class="image-box">
         <img src="images/pinsnoot.png" alt="Recessed Downlight">
       </div>
       <div class="content-box">
         <div class="category-label">Downlights</div>
         <div class="product-name">PIN SNOOT Series</div>
-        <p class="product-desc">Recessed Pin Snoot adjustable downlight with anti-glare technology and multi dimension housing.</p>
+        <p class="product-desc">Recessed Pin Snoot adjustable downlight with anti-glare technology.</p>
       </div>
     </div>
     
  <!-- PRODUCT ITEM 5 -->
-    <div class="product-card">
+    <div class="product-card" onclick="openModal('snoot-series')">
       <div class="image-box">
         <img src="images/snoot02.png" alt="Recessed Downlight">
       </div>
       <div class="content-box">
         <div class="category-label">Downlights</div>
         <div class="product-name">SNOOT Series</div>
-        <p class="product-desc">Recessed Pin Snoot adjustable downlight with anti-glare technology and multi dimension housing.</p>
+        <p class="product-desc">Recessed Pin Snoot adjustable downlight with anti-glare technology.</p>
       </div>
     </div>
 
  <!-- PRODUCT ITEM 6 -->
-    <div class="product-card">
+    <div class="product-card" onclick="openModal('tube-series')">
       <div class="image-box">
         <img src="images/TUBEPRO.png" alt="Tube Projector">
       </div>
@@ -183,7 +284,7 @@
     </div>
 
 <!-- PRODUCT ITEM 7 -->
-    <div class="product-card">
+    <div class="product-card" onclick="openModal('cube-series')">
       <div class="image-box">
         <img src="images/CUBEPRO.png" alt="Cube Projector">
       </div>
@@ -195,55 +296,55 @@
     </div>
 
 <!-- PRODUCT ITEM 8 -->
-    <div class="product-card">
+    <div class="product-card" onclick="openModal('spot-series')">
       <div class="image-box">
         <img src="images/POLEPRO.png" alt="Spot Projector">
       </div>
       <div class="content-box">
         <div class="category-label">Projector</div>
         <div class="product-name">SPOT Series</div>
-        <p class="product-desc">Outdoor Projector series with multiple optics and Pole mounting options for area lighting.</p>
+        <p class="product-desc">Outdoor Projector series with multiple optics and Pole mounting options.</p>
       </div>
     </div>
 
  <!-- PRODUCT ITEM 9 -->
-    <div class="product-card">
+    <div class="product-card" onclick="openModal('ul01-series')">
       <div class="image-box">
         <img src="images/UPLIGHT1.png" alt="Recessed Uplight">
       </div>
       <div class="content-box">
         <div class="category-label">Uplights</div>
         <div class="product-name">UL01 Series</div>
-        <p class="product-desc">Advanced recessed adjustable Uplight with anti-glare technology and multiple CCT options.</p>
+        <p class="product-desc">Advanced recessed adjustable Uplight with anti-glare technology.</p>
       </div>
     </div>
     
     <!-- PRODUCT ITEM 10 -->
-    <div class="product-card">
+    <div class="product-card" onclick="openModal('office-panel')">
       <div class="image-box">
         <img src="images/panel.png" alt="LED Panel">
       </div>
       <div class="content-box">
         <div class="category-label">Panels</div>
         <div class="product-name">Ultra-Slim Office Panel</div>
-        <p class="product-desc">Uniform light distribution for modern office environments and workspaces.</p>
+        <p class="product-desc">Uniform light distribution for modern office environments.</p>
       </div>
     </div>
 
     <!-- PRODUCT ITEM 11 -->
-    <div class="product-card">
+    <div class="product-card" onclick="openModal('high-bay')">
       <div class="image-box">
         <img src="images/highbay.png" alt="High Bay">
       </div>
       <div class="content-box">
         <div class="category-label">Industrial</div>
         <div class="product-name">High Bay 60-200W</div>
-        <p class="product-desc">Heavy-duty industrial lighting designed for warehouses and high-ceiling facilities.</p>
+        <p class="product-desc">Heavy-duty industrial lighting designed for warehouses.</p>
       </div>
     </div>
 
     <!-- PRODUCT ITEM 12 -->
-    <div class="product-card">
+    <div class="product-card" onclick="openModal('linear-profile')">
       <div class="image-box">
         <img src="images/linear.png" alt="Linear Lighting">
       </div>
@@ -257,9 +358,189 @@
   </div>
 </div>
 
+<!-- THE MODAL OVERLAY -->
+<div id="productModal" class="modal-overlay">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <div id="modalData" class="modal-body">
+            <!-- Data injected by JS -->
+        </div>
+    </div>
+</div>
+
 <footer>
   &copy; 2026 SEAD ELECTRIC. All rights reserved.
 </footer>
+
+<script>
+    // 1. PRODUCT DATABASE
+    const products = {
+        'dark-light': {
+            name: "DARK LIGHT Series",
+            desc: "The Dark Light series features a deeply recessed COB LED for maximum visual comfort and zero glare. Ideal for luxury residential and hospitality projects.",
+            img: "images/darklightseries.png",
+            variants: [
+                { model: "SD-DL-07R", power: "7W", cutout: "ø75mm", lumen: "560lm" },
+                { model: "SD-DL-12R", power: "12W", cutout: "ø90mm", lumen: "960lm" },
+                { model: "SD-DL-12S", power: "12W", cutout: "90x90mm", lumen: "960lm" }
+            ]
+        },
+        'disc-series': {
+            name: "DISC Series",
+            desc: "Professional adjustable downlight series with a slim bezel and high-performance optics.",
+            img: "images/discseries.png",
+            variants: [
+                { model: "SD-DS-10", power: "10W", cutout: "ø85mm", lumen: "850lm" },
+                { model: "SD-DS-20", power: "20W", cutout: "ø120mm", lumen: "1800lm" }
+            ]
+        },
+        'egg-series': {
+            name: "EGG Series",
+            desc: "Unique modular design allowing for multi-directional aiming while maintaining a clean ceiling aesthetic.",
+            img: "images/eggseries.png",
+            variants: [
+                { model: "SD-EG-01", power: "9W", cutout: "ø80mm", lumen: "810lm" },
+                { model: "SD-EG-02", power: "18W (2-way)", cutout: "160x80mm", lumen: "1620lm" }
+            ]
+        },
+        'pin-snoot': {
+            name: "PIN SNOOT Series",
+            desc: "Precision spotlighting with a pin-hole aperture for dramatic lighting effects.",
+            img: "images/pinsnoot.png",
+            variants: [
+                { model: "SD-PS-05", power: "5W", cutout: "ø55mm", lumen: "400lm" }
+            ]
+        },
+        'snoot-series': {
+            name: "SNOOT Series",
+            desc: "Advanced snoot design to eliminate secondary glare and provide a sharp, clean beam.",
+            img: "images/snoot02.png",
+            variants: [
+                { model: "SD-SN-10", power: "10W", cutout: "ø75mm", lumen: "900lm" },
+                { model: "SD-SN-15", power: "15W", cutout: "ø95mm", lumen: "1350lm" }
+            ]
+        },
+        'tube-series': {
+            name: "TUBE Series",
+            desc: "Cylindrical outdoor projectors with IP65 rating, suitable for facade and landscape lighting.",
+            img: "images/TUBEPRO.png",
+            variants: [
+                { model: "SD-TB-12", power: "12W", cutout: "Surface", lumen: "1080lm" },
+                { model: "SD-TB-25", power: "25W", cutout: "Surface", lumen: "2250lm" }
+            ]
+        },
+        'cube-series': {
+            name: "CUBE Series",
+            desc: "Modern square-form projector for architectural highlighting.",
+            img: "images/CUBEPRO.png",
+            variants: [
+                { model: "SD-CB-10", power: "10W", cutout: "Surface", lumen: "900lm" }
+            ]
+        },
+        'spot-series': {
+            name: "SPOT Series",
+            desc: "High-power outdoor spot lighting with specialized pole-mount brackets for area illumination.",
+            img: "images/POLEPRO.png",
+            variants: [
+                { model: "SD-ST-30", power: "30W", cutout: "Pole", lumen: "3300lm" },
+                { model: "SD-ST-50", power: "50W", cutout: "Pole", lumen: "5500lm" }
+            ]
+        },
+        'ul01-series': {
+            name: "UL01 Series Uplights",
+            desc: "Drive-over rated recessed ground lights with adjustable tilt optics.",
+            img: "images/UPLIGHT1.png",
+            variants: [
+                { model: "SD-UL01-03", power: "3W", cutout: "ø60mm", lumen: "210lm" },
+                { model: "SD-UL01-09", power: "9W", cutout: "ø100mm", lumen: "720lm" }
+            ]
+        },
+        'office-panel': {
+            name: "Ultra-Slim Office Panel",
+            desc: "Edge-lit LED technology providing flicker-free, uniform light for commercial workspaces.",
+            img: "images/panel.png",
+            variants: [
+                { model: "SD-PNL-60", power: "40W", cutout: "600x600mm", lumen: "4000lm" },
+                { model: "SD-PNL-120", power: "50W", cutout: "300x1200mm", lumen: "5000lm" }
+            ]
+        },
+        'high-bay': {
+            name: "High Bay Series",
+            desc: "High-efficacy industrial lighting with die-cast aluminum housing for superior thermal management.",
+            img: "images/highbay.png",
+            variants: [
+                { model: "SD-HB-100", power: "100W", cutout: "Suspended", lumen: "13000lm" },
+                { model: "SD-HB-150", power: "150W", cutout: "Suspended", lumen: "19500lm" },
+                { model: "SD-HB-200", power: "200W", cutout: "Suspended", lumen: "26000lm" }
+            ]
+        },
+        'linear-profile': {
+            name: "Linear Profile",
+            desc: "Customizable length architectural profiles for surface, recessed, or suspended mounting.",
+            img: "images/linear.png",
+            variants: [
+                { model: "SD-LN-20", power: "20W/m", cutout: "Custom", lumen: "2000lm/m" }
+            ]
+        }
+    };
+
+    // 2. MODAL LOGIC
+    function openModal(id) {
+        const product = products[id];
+        const modal = document.getElementById('productModal');
+        const container = document.getElementById('modalData');
+
+        // Generate Table Rows
+        const rows = product.variants.map(v => `
+            <tr>
+                <td><strong>${v.model}</strong></td>
+                <td>${v.power}</td>
+                <td>${v.cutout}</td>
+                <td>${v.lumen}</td>
+            </tr>
+        `).join('');
+
+        container.innerHTML = `
+            <div class="modal-img-side">
+                <img src="${product.img}" alt="${product.name}">
+            </div>
+            <div class="modal-info-side">
+                <h2>${product.name}</h2>
+                <p>${product.desc}</p>
+                <table class="variant-table">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Power</th>
+                            <th>Mounting/Size</th>
+                            <th>Output</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${rows}
+                    </tbody>
+                </table>
+                <a href="contact.html" class="btn-enquiry">ENQUIRE ABOUT THIS SERIES</a>
+            </div>
+        `;
+
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Prevent scroll
+    }
+
+    function closeModal() {
+        document.getElementById('productModal').style.display = 'none';
+        document.body.style.overflow = 'auto'; // Re-enable scroll
+    }
+
+    // Close modal if user clicks outside the white box
+    window.onclick = function(event) {
+        const modal = document.getElementById('productModal');
+        if (event.target == modal) {
+            closeModal();
+        }
+    }
+</script>
 
 </body>
 </html>
