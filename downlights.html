@@ -121,14 +121,14 @@
     <!-- ITEM 1 -->
     <div class="item-card" onclick="openModal('dl01')">
       <img src="images/d1.png" alt="DL01" class="item-img">
-      <div class="item-name">SEAD DL01 - 7W-25W</div>
+      <div class="item-name">SEAD DL01 - 18W-48W</div>
       <div class="item-specs">CRI 90 | 3000K-6000K | IP65</div>
     </div>
 
     <!-- ITEM 2 -->
     <div class="item-card" onclick="openModal('dl02')">
       <img src="images/d2.png" alt="DL02" class="item-img">
-      <div class="item-name">SEAD DL02 - 12W-36W</div>
+      <div class="item-name">SEAD DL02 - 15W-42W</div>
       <div class="item-specs">CRI 90 | Diffused | IP54</div>
     </div>
 
@@ -149,7 +149,7 @@
     <!-- ITEM 5 -->
     <div class="item-card" onclick="openModal('dl10')">
       <img src="images/DL10.png" alt="DL10" class="item-img">
-      <div class="item-name">SEAD DL10 - 6W-30W</div>
+      <div class="item-name">SEAD DL10 - 7W-20W</div>
       <div class="item-specs">CRI 90 | Anti-Glare | Dimming</div>
     </div>
 
@@ -163,14 +163,14 @@
     <!-- ITEM 7 -->
     <div class="item-card" onclick="openModal('dl12')">
       <img src="images/DL12.png" alt="DL12" class="item-img">
-      <div class="item-name">SEAD DL12 - 7W-20W</div>
+      <div class="item-name">SEAD DL12 - 7W-15W</div>
       <div class="item-specs">CRI 90 | Anti-Glare | Dimming</div>
     </div>
 
     <!-- ITEM 8 -->
     <div class="item-card" onclick="openModal('ldl01')">
       <img src="images/LDL1.png" alt="LDL01" class="item-img">
-      <div class="item-name">SEAD LDL01 - 2W-20W</div>
+      <div class="item-name">SEAD LDL01 - 5W-25W</div>
       <div class="item-specs">CRI 90 | 3000K-6000K | IP20</div>
     </div>
 
@@ -212,12 +212,13 @@
     const products = {
         'dl01': {
             name: "SEAD DL01 Series",
-            desc: "Professional architectural downlight with interchangeable reflectors and IP65 protection for wet areas.",
+            desc: "Professional Commercial downlight with UGR<13 Beam 60° and IP65 protection for wet areas.",
             img: "images/d1.png",
             variants: [
-                { model: "SD-DL01-07", power: "7W", lumens: "630lm", cutout: "ø75mm" },
-                { model: "SD-DL01-15", power: "15W", lumens: "1350lm", cutout: "ø95mm" },
-                { model: "SD-DL01-25", power: "25W", lumens: "2250lm", cutout: "ø120mm" }
+                { model: "SD-DL01-18", power: "18W", lumens: "1980lm", cutout: "ø115mm" },
+                { model: "SD-DL01-28", power: "28W", lumens: "3080lm", cutout: "ø140mm" },
+                { model: "SD-DL01-38", power: "38W", lumens: "4180lm", cutout: "ø170mm" }
+		{ model: "SD-DL01-48", power: "48W", lumens: "5280lm", cutout: "ø200mm" }
             ]
         },
         'dl02': {
@@ -225,9 +226,11 @@
             desc: "Diffused wide-beam downlight for general ambient lighting in commercial spaces.",
             img: "images/d2.png",
             variants: [
-                { model: "SD-DL02-12", power: "12W", lumens: "1080lm", cutout: "ø100mm" },
-                { model: "SD-DL02-24", power: "24W", lumens: "2160lm", cutout: "ø150mm" },
-                { model: "SD-DL02-36", power: "36W", lumens: "3240lm", cutout: "ø200mm" }
+                { model: "SD-DL02-12", power: "15W", lumens: "1350lm", cutout: "ø90mm" },
+                { model: "SD-DL02-20", power: "20W", lumens: "1800lm", cutout: "ø115mm" },
+                { model: "SD-DL02-25", power: "25W", lumens: "2250lm", cutout: "ø140mm" }
+		{ model: "SD-DL02-35", power: "55W", lumens: "3150lm", cutout: "ø170mm" }
+		{ model: "SD-DL02-42", power: "42W", lumens: "3780lm", cutout: "ø200mm" }
             ]
         },
         'dl03': {
@@ -236,7 +239,8 @@
             img: "images/DL03.png",
             variants: [
                 { model: "SD-DL03-07", power: "7W", lumens: "560lm", cutout: "ø75mm" },
-                { model: "SD-DL03-12", power: "12W", lumens: "1020lm", cutout: "ø90mm" }
+                { model: "SD-DL03-12", power: "12W", lumens: "1020lm", cutout: "ø110mm" }
+                { model: "SD-DL03-25", power: "25W", lumens: "2250lm", cutout: "ø140mm" }
             ]
         },
         'dl04': {
@@ -244,17 +248,21 @@
             desc: "Deep-recessed anti-glare downlight with premium UGR control.",
             img: "images/DL04.png",
             variants: [
-                { model: "SD-DL04-10", power: "10W", lumens: "900lm", cutout: "ø80mm" },
-                { model: "SD-DL04-20", power: "20W", lumens: "1800lm", cutout: "ø110mm" }
+                { model: "SD-DL04-10", power: "10W", lumens: "900lm", cutout: "ø85mm" },
+                { model: "SD-DL04-13", power: "13W", lumens: "1170lm", cutout: "ø95mm" }
+                { model: "SD-DL04-18", power: "18W", lumens: "1620lm", cutout: "ø130mm" }
+                { model: "SD-DL04-25", power: "25W", lumens: "2250lm", cutout: "ø155mm" }
+                { model: "SD-DL04-35", power: "35W", lumens: "3150lm", cutout: "ø200mm" }
             ]
         },
         'dl10': {
             name: "SEAD DL10 Series",
-            desc: "Modern square and round adjustable downlight for targeted accent lighting.",
+            desc: "Modern round adjustable downlight for targeted accent lighting.",
             img: "images/DL10.png",
             variants: [
-                { model: "SD-DL10-06", power: "6W", lumens: "500lm", cutout: "ø65mm" },
-                { model: "SD-DL10-15", power: "15W", lumens: "1300lm", cutout: "ø90mm" }
+                { model: "SD-DL10-07", power: "7W", lumens: "560lm", cutout: "ø55mm" },
+                { model: "SD-DL10-12", power: "12W", lumens: "960lm", cutout: "ø75mm" }
+                { model: "SD-DL10-20", power: "20W", lumens: "1600lm", cutout: "ø95mm" }
             ]
         },
         'dl11': {
@@ -262,8 +270,11 @@
             desc: "High-power recessed downlight for high ceilings and retail environments.",
             img: "images/DL11.png",
             variants: [
-                { model: "SD-DL11-30", power: "30W", lumens: "3000lm", cutout: "ø140mm" },
-                { model: "SD-DL11-50", power: "50W", lumens: "5000lm", cutout: "ø180mm" }
+                { model: "SD-DL11-12", power: "12W", lumens: "1000lm", cutout: "ø75mm" },
+                { model: "SD-DL11-18", power: "18W", lumens: "1800lm", cutout: "ø90mm" }
+                { model: "SD-DL11-30", power: "30W", lumens: "3000lm", cutout: "ø125mm" }
+                { model: "SD-DL11-40", power: "40W", lumens: "4000lm", cutout: "ø165mm" }
+                { model: "SD-DL11-50", power: "50W", lumens: "5000lm", cutout: "ø200mm" }
             ]
         },
         'dl12': {
@@ -271,8 +282,9 @@
             desc: "Slim-bezel professional downlight with architectural finish.",
             img: "images/DL12.png",
             variants: [
-                { model: "SD-DL12-07", power: "7W", lumens: "600lm", cutout: "ø75mm" },
-                { model: "SD-DL12-12", power: "12W", lumens: "1100lm", cutout: "ø95mm" }
+                { model: "SD-DL12-07", power: "7W", lumens: "700lm", cutout: "ø65mm" },
+                { model: "SD-DL12-12", power: "12W", lumens: "1100lm", cutout: "ø75mm" }
+                { model: "SD-DL12-15", power: "15W", lumens: "1425lm", cutout: "ø85mm" }
             ]
         },
         'ldl01': {
@@ -280,9 +292,9 @@
             desc: "Miniature linear recessed downlight (darklight effect) for seamless architectural integration.",
             img: "images/LDL1.png",
             variants: [
-                { model: "SD-LDL1-2", power: "2W", lumens: "160lm", cutout: "45x45mm" },
-                { model: "SD-LDL1-10", power: "10W", lumens: "850lm", cutout: "140x45mm" },
-                { model: "SD-LDL1-20", power: "20W", lumens: "1700lm", cutout: "275x45mm" }
+                { model: "SD-LDL1-5", power: "5W", lumens: "400lm", cutout: "55x55mm" },
+                { model: "SD-LDL1-15", power: "15W", lumens: "120lm", cutout: "145x55mm" },
+                { model: "SD-LDL1-25", power: "25W", lumens: "2400lm", cutout: "280x55mm" }
             ]
         }
     };
