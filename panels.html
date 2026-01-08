@@ -16,7 +16,7 @@
     body { font-family: 'Inter', sans-serif; margin: 0; color: var(--text); background: #fff; line-height: 1.5; }
     a { text-decoration: none; color: inherit; }
 
-    /* --- HEADER (Fixed & Cleaned) --- */
+    /* --- HEADER --- */
     header { background: #ffffff; border-bottom: 1px solid #e5e7eb; position: sticky; top: 0; z-index: 1000; }
     .nav { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
     .logo img { height: 70px; width: auto; display: block; }
@@ -201,7 +201,7 @@
     const products = {
         'pn01': {
             name: "SEAD PN01 Series",
-            desc: "Professional Commercial panel light IP20.",
+            desc: "Professional Commercial panel light IP20 for dry indoor environments.",
             img: "images/panel.png",
             variants: [
                 { model: "SD-PN01-36", power: "36W", lumens: "3960lm", size: "600*600mm" },
@@ -210,7 +210,7 @@
         },
         'pn02': {
             name: "SEAD PN02 Series",
-            desc: "Professional Commercial panel light IP65.",
+            desc: "Professional Commercial panel light IP65, water and dust resistant.",
             img: "images/panel.png",
             variants: [
                 { model: "SD-PN02-36", power: "36W", lumens: "3960lm", size: "600*600mm" },
@@ -219,7 +219,7 @@
         },
         'rdpn01': {
             name: "SEAD RDPN01 Series",
-            desc: "Round Ceiling light for residential and commercial use.",
+            desc: "Round Ceiling light for residential and commercial use. Available in multiple diameters.",
             img: "images/RDPN.jpeg",
             variants: [
                 { model: "SD-RDPN01-12", power: "12W", lumens: "960lm", size: "ø160mm" },
@@ -235,7 +235,7 @@
         'cl01': {
             name: "SEAD CL01 Series",
             desc: "Deep-recessed anti-glare Surface downlight with premium UGR control.",
-            img: "images/CL01.png",
+            img: "images/CL001.png",
             variants: [
                 { model: "SD-CL01-12", power: "12W", lumens: "1200lm", size: "ø75*90mm" },
                 { model: "SD-CL01-20", power: "20W", lumens: "2000lm", size: "ø91*112mm" },
@@ -247,9 +247,9 @@
             desc: "Modern round adjustable downlight for targeted accent lighting.",
             img: "images/DL10.png",
             variants: [
-                { model: "SD-DL10-07", power: "7W", lumens: "560lm", cutout: "ø55mm" },
-                { model: "SD-DL10-12", power: "12W", lumens: "960lm", cutout: "ø75mm" },
-                { model: "SD-DL10-20", power: "20W", lumens: "1600lm", cutout: "ø95mm" }
+                { model: "SD-DL10-07", power: "7W", lumens: "560lm", size: "ø55mm (cutout)" },
+                { model: "SD-DL10-12", power: "12W", lumens: "960lm", size: "ø75mm (cutout)" },
+                { model: "SD-DL10-20", power: "20W", lumens: "1600lm", size: "ø95mm (cutout)" }
             ]
         },
         'dl11': {
@@ -257,11 +257,11 @@
             desc: "High-power recessed downlight for high ceilings and retail environments.",
             img: "images/DL11.png",
             variants: [
-                { model: "SD-DL11-12", power: "12W", lumens: "1000lm", cutout: "ø75mm" },
-                { model: "SD-DL11-18", power: "18W", lumens: "1800lm", cutout: "ø90mm" },
-                { model: "SD-DL11-30", power: "30W", lumens: "3000lm", cutout: "ø125mm" },
-                { model: "SD-DL11-40", power: "40W", lumens: "4000lm", cutout: "ø165mm" },
-                { model: "SD-DL11-50", power: "50W", lumens: "5000lm", cutout: "ø200mm" }
+                { model: "SD-DL11-12", power: "12W", lumens: "1000lm", size: "ø75mm" },
+                { model: "SD-DL11-18", power: "18W", lumens: "1800lm", size: "ø90mm" },
+                { model: "SD-DL11-30", power: "30W", lumens: "3000lm", size: "ø125mm" },
+                { model: "SD-DL11-40", power: "40W", lumens: "4000lm", size: "ø165mm" },
+                { model: "SD-DL11-50", power: "50W", lumens: "5000lm", size: "ø200mm" }
             ]
         },
         'dl12': {
@@ -269,9 +269,9 @@
             desc: "Slim-bezel professional downlight with architectural finish.",
             img: "images/DL12.png",
             variants: [
-                { model: "SD-DL12-07", power: "7W", lumens: "700lm", cutout: "ø65mm" },
-                { model: "SD-DL12-12", power: "12W", lumens: "1100lm", cutout: "ø75mm" },
-                { model: "SD-DL12-15", power: "15W", lumens: "1425lm", cutout: "ø85mm" }
+                { model: "SD-DL12-07", power: "7W", lumens: "700lm", size: "ø65mm" },
+                { model: "SD-DL12-12", power: "12W", lumens: "1100lm", size: "ø75mm" },
+                { model: "SD-DL12-15", power: "15W", lumens: "1425lm", size: "ø85mm" }
             ]
         },
         'ldl01': {
@@ -279,25 +279,30 @@
             desc: "Miniature linear recessed downlight for seamless architectural integration.",
             img: "images/LDL1.png",
             variants: [
-                { model: "SD-LDL1-5", power: "5W", lumens: "400lm", cutout: "55x55mm" },
-                { model: "SD-LDL1-15", power: "15W", lumens: "1200lm", cutout: "145x55mm" },
-                { model: "SD-LDL1-25", power: "25W", lumens: "2400lm", cutout: "280x55mm" }
+                { model: "SD-LDL1-5", power: "5W", lumens: "400lm", size: "55x55mm" },
+                { model: "SD-LDL1-15", power: "15W", lumens: "1200lm", size: "145x55mm" },
+                { model: "SD-LDL1-25", power: "25W", lumens: "2400lm", size: "280x55mm" }
             ]
         }
     };
 
     function openModal(id) {
         const product = products[id];
-        if(!product) return;
+        if(!product) {
+            console.error("Product ID not found:", id);
+            return;
+        }
+        
         const modal = document.getElementById('productModal');
         const container = document.getElementById('modalData');
 
+        // Logic to handle both 'size' and 'cutout' keys from data
         const rows = product.variants.map(v => `
             <tr>
                 <td><strong>${v.model}</strong></td>
                 <td>${v.power}</td>
                 <td>${v.lumens}</td>
-                <td>${v.cutout}</td>
+                <td>${v.size || v.cutout || 'N/A'}</td>
             </tr>
         `).join('');
 
@@ -307,7 +312,7 @@
                 <h2>${product.name}</h2>
                 <p>${product.desc}</p>
                 <table class="variant-table">
-                    <thead><tr><th>Model</th><th>Wattage</th><th>Output</th><th>Cut-out</th></tr></thead>
+                    <thead><tr><th>Model</th><th>Wattage</th><th>Output</th><th>Dimensions</th></tr></thead>
                     <tbody>${rows}</tbody>
                 </table>
                 <a href="contact.html" class="btn-enquiry">REQUEST QUOTE</a>
